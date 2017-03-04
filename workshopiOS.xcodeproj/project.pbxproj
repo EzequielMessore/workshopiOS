@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A98788C954F1CECE5CA9F705 /* Pods_workshopiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B11E5A0F0972AF29FA3E714B /* Pods_workshopiOS.framework */; };
 		E4176AC01E6B665F005A5EBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176ABF1E6B665F005A5EBB /* main.m */; };
 		E4176AC31E6B665F005A5EBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176AC21E6B665F005A5EBB /* AppDelegate.m */; };
 		E4176AC61E6B665F005A5EBB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176AC51E6B665F005A5EBB /* ViewController.m */; };
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09A9326A5F7E50476348B0D7 /* Pods-workshopiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-workshopiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-workshopiOS/Pods-workshopiOS.release.xcconfig"; sourceTree = "<group>"; };
+		6B7B278326BD58B5FC719E9B /* Pods-workshopiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-workshopiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-workshopiOS/Pods-workshopiOS.debug.xcconfig"; sourceTree = "<group>"; };
+		B11E5A0F0972AF29FA3E714B /* Pods_workshopiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_workshopiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4176ABB1E6B665F005A5EBB /* workshopiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = workshopiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4176ABF1E6B665F005A5EBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4176AC11E6B665F005A5EBB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A98788C954F1CECE5CA9F705 /* Pods_workshopiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1632F8A7A88A8FEEA4B4476F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B11E5A0F0972AF29FA3E714B /* Pods_workshopiOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		259F880A33F4B11692F41541 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B7B278326BD58B5FC719E9B /* Pods-workshopiOS.debug.xcconfig */,
+				09A9326A5F7E50476348B0D7 /* Pods-workshopiOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E4176AB21E6B665F005A5EBB = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,8 @@
 				E4176AD71E6B665F005A5EBB /* workshopiOSTests */,
 				E4176AE21E6B665F005A5EBB /* workshopiOSUITests */,
 				E4176ABC1E6B665F005A5EBB /* Products */,
+				259F880A33F4B11692F41541 /* Pods */,
+				1632F8A7A88A8FEEA4B4476F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4176AE81E6B665F005A5EBB /* Build configuration list for PBXNativeTarget "workshopiOS" */;
 			buildPhases = (
+				102A95563B7E8017B49DCB9F /* [CP] Check Pods Manifest.lock */,
 				E4176AB71E6B665F005A5EBB /* Sources */,
 				E4176AB81E6B665F005A5EBB /* Frameworks */,
 				E4176AB91E6B665F005A5EBB /* Resources */,
+				A17B787D4C7C5E3896B3D771 /* [CP] Embed Pods Frameworks */,
+				8B3972576204BE2FEDAD050C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,6 +294,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		102A95563B7E8017B49DCB9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8B3972576204BE2FEDAD050C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-workshopiOS/Pods-workshopiOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A17B787D4C7C5E3896B3D771 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-workshopiOS/Pods-workshopiOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E4176AB71E6B665F005A5EBB /* Sources */ = {
@@ -420,6 +495,7 @@
 		};
 		E4176AE91E6B665F005A5EBB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B7B278326BD58B5FC719E9B /* Pods-workshopiOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = workshopiOS/Info.plist;
@@ -431,6 +507,7 @@
 		};
 		E4176AEA1E6B665F005A5EBB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09A9326A5F7E50476348B0D7 /* Pods-workshopiOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = workshopiOS/Info.plist;
