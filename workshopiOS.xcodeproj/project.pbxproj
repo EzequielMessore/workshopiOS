@@ -27,6 +27,8 @@
 		E4176B1B1E6C53B4005A5EBB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176B1A1E6C53B4005A5EBB /* HomeViewController.m */; };
 		E4176B1F1E6C53E1005A5EBB /* RaffleTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176B1E1E6C53E1005A5EBB /* RaffleTypeViewController.m */; };
 		E4176B231E6C5407005A5EBB /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176B221E6C5407005A5EBB /* AboutViewController.m */; };
+		E4176B2A1E6C8E45005A5EBB /* RaffleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176B261E6C8E45005A5EBB /* RaffleTableViewCell.m */; };
+		E4176B2B1E6C8E45005A5EBB /* PersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176B291E6C8E45005A5EBB /* PersonTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,10 @@
 		E4176B1E1E6C53E1005A5EBB /* RaffleTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaffleTypeViewController.m; sourceTree = "<group>"; };
 		E4176B211E6C5407005A5EBB /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		E4176B221E6C5407005A5EBB /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		E4176B251E6C8E45005A5EBB /* RaffleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaffleTableViewCell.h; sourceTree = "<group>"; };
+		E4176B261E6C8E45005A5EBB /* RaffleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaffleTableViewCell.m; sourceTree = "<group>"; };
+		E4176B281E6C8E45005A5EBB /* PersonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonTableViewCell.h; sourceTree = "<group>"; };
+		E4176B291E6C8E45005A5EBB /* PersonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +225,8 @@
 		E4176AF31E6C4E40005A5EBB /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				E4176B241E6C8E45005A5EBB /* RaffleTableViewCell */,
+				E4176B271E6C8E45005A5EBB /* PersonTableViewCell */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -347,6 +355,24 @@
 				E4176B221E6C5407005A5EBB /* AboutViewController.m */,
 			);
 			path = AboutViewController;
+			sourceTree = "<group>";
+		};
+		E4176B241E6C8E45005A5EBB /* RaffleTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E4176B251E6C8E45005A5EBB /* RaffleTableViewCell.h */,
+				E4176B261E6C8E45005A5EBB /* RaffleTableViewCell.m */,
+			);
+			path = RaffleTableViewCell;
+			sourceTree = "<group>";
+		};
+		E4176B271E6C8E45005A5EBB /* PersonTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E4176B281E6C8E45005A5EBB /* PersonTableViewCell.h */,
+				E4176B291E6C8E45005A5EBB /* PersonTableViewCell.m */,
+			);
+			path = PersonTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -543,8 +569,10 @@
 				E4176AC31E6B665F005A5EBB /* AppDelegate.m in Sources */,
 				E4176B171E6C51D8005A5EBB /* LoginViewController.m in Sources */,
 				E4176B021E6C50B0005A5EBB /* InitialSetUpViewController.m in Sources */,
+				E4176B2A1E6C8E45005A5EBB /* RaffleTableViewCell.m in Sources */,
 				E4176AFD1E6C5072005A5EBB /* AppUtils.m in Sources */,
 				E4176B1B1E6C53B4005A5EBB /* HomeViewController.m in Sources */,
+				E4176B2B1E6C8E45005A5EBB /* PersonTableViewCell.m in Sources */,
 				E4176B1F1E6C53E1005A5EBB /* RaffleTypeViewController.m in Sources */,
 				E4176AC01E6B665F005A5EBB /* main.m in Sources */,
 			);

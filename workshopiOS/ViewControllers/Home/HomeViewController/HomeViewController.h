@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RaffleTableViewCell.h"
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+
+- (IBAction)segmentedControlTouched:(id)sender;
 
 
 @end

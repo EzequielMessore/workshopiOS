@@ -43,6 +43,7 @@
 #pragma mark - TextField Delegate
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    //Method called when hitting the return or done button
     [textField resignFirstResponder];
     return YES;
 }
@@ -51,6 +52,8 @@
 
 - (IBAction)loginButtonTouched:(id)sender {
     [AppUtils saveToUserDefault:@"asjrq3473947" withKey:API_TOKEN];
+    
+    //Dismiss is used with presentViewController 
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
