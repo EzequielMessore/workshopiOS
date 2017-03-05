@@ -33,12 +33,89 @@
                         <viewControllerLayoutGuide type="top" id="S8K-6o-gLy"/>
                         <viewControllerLayoutGuide type="bottom" id="cpz-hF-HD1"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VDz-v7-b2x">
+                    <view key="view" contentMode="scaleToFill" id="QUr-nu-ssA" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EuG-br-54y">
+                                <rect key="frame" x="32" y="319" width="311" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="zoX-X8-dvc"/>
+                                </constraints>
+                                <color key="textColor" red="0.21176470589999999" green="0.27450980390000002" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1M8-64-gUK">
+                                <rect key="frame" x="32" y="349" width="313" height="1"/>
+                                <color key="backgroundColor" red="0.90980392160000001" green="0.94901960780000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="FKS-q3-ijr"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fTh-Jz-64w" userLabel="password">
+                                <rect key="frame" x="32" y="369" width="311" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4So-Og-IUo"/>
+                                </constraints>
+                                <color key="textColor" red="0.21176470589999999" green="0.27450980390000002" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sor-xN-8dY">
+                                <rect key="frame" x="32" y="399" width="313" height="1"/>
+                                <color key="backgroundColor" red="0.90980392160000001" green="0.94901960780000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="s3H-RU-gBO"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Avy-vE-D08">
+                                <rect key="frame" x="32" y="560" width="311" height="57"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="cZJ-ny-iUV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <state key="normal" title="LOG IN">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButtonTouched:" destination="2Yc-jF-azx" eventType="touchUpInside" id="uVv-dv-S2a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.39607843139999999" green="0.87058823529999996" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="fTh-Jz-64w" firstAttribute="top" secondItem="EuG-br-54y" secondAttribute="bottom" constant="20" id="6MA-oF-Xvj"/>
+                            <constraint firstItem="fTh-Jz-64w" firstAttribute="leading" secondItem="EuG-br-54y" secondAttribute="leading" id="6gq-x9-2bg"/>
+                            <constraint firstItem="cpz-hF-HD1" firstAttribute="top" secondItem="Avy-vE-D08" secondAttribute="bottom" constant="50" id="LkV-HE-vSJ"/>
+                            <constraint firstItem="1M8-64-gUK" firstAttribute="trailing" secondItem="EuG-br-54y" secondAttribute="trailing" constant="2" id="OL8-cQ-o5D"/>
+                            <constraint firstItem="1M8-64-gUK" firstAttribute="leading" secondItem="EuG-br-54y" secondAttribute="leading" id="Qvj-8b-Sun"/>
+                            <constraint firstItem="Sor-xN-8dY" firstAttribute="trailing" secondItem="1M8-64-gUK" secondAttribute="trailing" id="UN6-0A-qB6"/>
+                            <constraint firstItem="Sor-xN-8dY" firstAttribute="top" secondItem="fTh-Jz-64w" secondAttribute="bottom" id="Urq-Lf-n7z"/>
+                            <constraint firstAttribute="trailing" secondItem="EuG-br-54y" secondAttribute="trailing" constant="32" id="Ww2-ZZ-TTK"/>
+                            <constraint firstItem="Avy-vE-D08" firstAttribute="leading" secondItem="QUr-nu-ssA" secondAttribute="leading" constant="32" id="cfu-8t-9e1"/>
+                            <constraint firstItem="1M8-64-gUK" firstAttribute="top" secondItem="EuG-br-54y" secondAttribute="bottom" id="dTe-um-xyg"/>
+                            <constraint firstItem="Sor-xN-8dY" firstAttribute="leading" secondItem="1M8-64-gUK" secondAttribute="leading" id="gGG-tR-2Gu"/>
+                            <constraint firstItem="EuG-br-54y" firstAttribute="centerY" secondItem="QUr-nu-ssA" secondAttribute="centerY" id="o6G-ap-OIm"/>
+                            <constraint firstItem="fTh-Jz-64w" firstAttribute="trailing" secondItem="EuG-br-54y" secondAttribute="trailing" id="wqc-e0-Uf8"/>
+                            <constraint firstItem="EuG-br-54y" firstAttribute="leading" secondItem="QUr-nu-ssA" secondAttribute="leading" constant="32" id="xpM-lP-JYV"/>
+                            <constraint firstAttribute="trailing" secondItem="Avy-vE-D08" secondAttribute="trailing" constant="32" id="zPx-gk-XMl"/>
+                        </constraints>
+                        <connections>
+                            <action selector="hideKeyboard:" destination="2Yc-jF-azx" eventType="touchUpInside" id="a3V-fX-2Xh"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Ri6-xx-d2J"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="EuG-br-54y" id="eck-lQ-jIC"/>
+                        <outlet property="passwordTextField" destination="fTh-Jz-64w" id="m1q-Tb-gJj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJQ-LZ-Y3T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -32,7 +32,7 @@
     
     //1. Here, you can test if the user is authorized to use the app
     
-    [AppUtils saveToUserDefault:@"token" withKey:API_TOKEN];
+//    [AppUtils saveToUserDefault:@"token" withKey:API_TOKEN];
     
     if(![AppUtils retrieveFromUserDefaultWithKey:API_TOKEN]) {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];

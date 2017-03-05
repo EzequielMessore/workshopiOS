@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "AppUtils.h"
 
 @interface LoginViewController ()
 
@@ -17,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //NavigationBar hidden so the background color takes all the screen
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +39,30 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - TextField Delegate
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+#pragma mark - IBActions
+
+- (IBAction)loginButtonTouched:(id)sender {
+    [AppUtils saveToUserDefault:@"asjrq3473947" withKey:API_TOKEN];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)hideKeyboard:(id)sender {
+    //There are two ways to close keyboard
+    
+    //Resigning each textfield
+    //    [self.emailTextField resignFirstResponder];
+    //    [self.passwordTextField resignFirstResponder];
+    
+    //Ending all editing
+    [self.view endEditing:YES];
+}
 
 @end
