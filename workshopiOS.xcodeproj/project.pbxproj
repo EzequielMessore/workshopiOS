@@ -10,12 +10,19 @@
 		A98788C954F1CECE5CA9F705 /* Pods_workshopiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B11E5A0F0972AF29FA3E714B /* Pods_workshopiOS.framework */; };
 		E4176AC01E6B665F005A5EBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176ABF1E6B665F005A5EBB /* main.m */; };
 		E4176AC31E6B665F005A5EBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176AC21E6B665F005A5EBB /* AppDelegate.m */; };
-		E4176AC61E6B665F005A5EBB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176AC51E6B665F005A5EBB /* ViewController.m */; };
 		E4176AC91E6B665F005A5EBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4176AC71E6B665F005A5EBB /* Main.storyboard */; };
 		E4176ACB1E6B665F005A5EBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4176ACA1E6B665F005A5EBB /* Assets.xcassets */; };
 		E4176ACE1E6B665F005A5EBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4176ACC1E6B665F005A5EBB /* LaunchScreen.storyboard */; };
 		E4176AD91E6B665F005A5EBB /* workshopiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176AD81E6B665F005A5EBB /* workshopiOSTests.m */; };
 		E4176AE41E6B665F005A5EBB /* workshopiOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176AE31E6B665F005A5EBB /* workshopiOSUITests.m */; };
+		E4176AFD1E6C5072005A5EBB /* AppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176AFC1E6C5072005A5EBB /* AppUtils.m */; };
+		E4176B021E6C50B0005A5EBB /* InitialSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176B011E6C50B0005A5EBB /* InitialSetUpViewController.m */; };
+		E4176B041E6C50BF005A5EBB /* InitialSetUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4176B031E6C50BF005A5EBB /* InitialSetUp.storyboard */; };
+		E4176B071E6C50E0005A5EBB /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176B061E6C50E0005A5EBB /* TabBarViewController.m */; };
+		E4176B091E6C510F005A5EBB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4176B081E6C510F005A5EBB /* Login.storyboard */; };
+		E4176B0B1E6C5119005A5EBB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4176B0A1E6C5119005A5EBB /* Home.storyboard */; };
+		E4176B0D1E6C5123005A5EBB /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4176B0C1E6C5123005A5EBB /* About.storyboard */; };
+		E4176B0F1E6C512F005A5EBB /* Creation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4176B0E1E6C512F005A5EBB /* Creation.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +50,6 @@
 		E4176ABF1E6B665F005A5EBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4176AC11E6B665F005A5EBB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E4176AC21E6B665F005A5EBB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E4176AC41E6B665F005A5EBB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E4176AC51E6B665F005A5EBB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E4176AC81E6B665F005A5EBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4176ACA1E6B665F005A5EBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4176ACD1E6B665F005A5EBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +60,19 @@
 		E4176ADF1E6B665F005A5EBB /* workshopiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = workshopiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4176AE31E6B665F005A5EBB /* workshopiOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = workshopiOSUITests.m; sourceTree = "<group>"; };
 		E4176AE51E6B665F005A5EBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4176AFB1E6C5072005A5EBB /* AppUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtils.h; sourceTree = "<group>"; };
+		E4176AFC1E6C5072005A5EBB /* AppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtils.m; sourceTree = "<group>"; };
+		E4176AFE1E6C5082005A5EBB /* Urls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Urls.h; sourceTree = "<group>"; };
+		E4176AFF1E6C508D005A5EBB /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		E4176B001E6C50B0005A5EBB /* InitialSetUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialSetUpViewController.h; sourceTree = "<group>"; };
+		E4176B011E6C50B0005A5EBB /* InitialSetUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialSetUpViewController.m; sourceTree = "<group>"; };
+		E4176B031E6C50BF005A5EBB /* InitialSetUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InitialSetUp.storyboard; sourceTree = "<group>"; };
+		E4176B051E6C50E0005A5EBB /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		E4176B061E6C50E0005A5EBB /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		E4176B081E6C510F005A5EBB /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		E4176B0A1E6C5119005A5EBB /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		E4176B0C1E6C5123005A5EBB /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		E4176B0E1E6C512F005A5EBB /* Creation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Creation.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,13 +145,24 @@
 			children = (
 				E4176AC11E6B665F005A5EBB /* AppDelegate.h */,
 				E4176AC21E6B665F005A5EBB /* AppDelegate.m */,
-				E4176AC41E6B665F005A5EBB /* ViewController.h */,
-				E4176AC51E6B665F005A5EBB /* ViewController.m */,
-				E4176AC71E6B665F005A5EBB /* Main.storyboard */,
+				E4176ACF1E6B665F005A5EBB /* Info.plist */,
+				E4176B0C1E6C5123005A5EBB /* About.storyboard */,
+				E4176B0E1E6C512F005A5EBB /* Creation.storyboard */,
+				E4176B0A1E6C5119005A5EBB /* Home.storyboard */,
+				E4176B081E6C510F005A5EBB /* Login.storyboard */,
 				E4176ACA1E6B665F005A5EBB /* Assets.xcassets */,
 				E4176ACC1E6B665F005A5EBB /* LaunchScreen.storyboard */,
-				E4176ACF1E6B665F005A5EBB /* Info.plist */,
+				E4176AC71E6B665F005A5EBB /* Main.storyboard */,
+				E4176AF91E6C4E40005A5EBB /* Config */,
+				E4176AF81E6C4E40005A5EBB /* InitialSetUp */,
+				E4176AF71E6C4E40005A5EBB /* Managers */,
+				E4176AF61E6C4E40005A5EBB /* Models */,
+				E4176AF51E6C4E40005A5EBB /* Parsers */,
+				E4176AF41E6C4E40005A5EBB /* ReusableViews */,
 				E4176ABE1E6B665F005A5EBB /* Supporting Files */,
+				E4176AFA1E6C4E86005A5EBB /* TabBarControllers */,
+				E4176AF31E6C4E40005A5EBB /* TableCells */,
+				E4176AF21E6C4E40005A5EBB /* ViewControllers */,
 			);
 			path = workshopiOS;
 			sourceTree = "<group>";
@@ -162,6 +191,78 @@
 				E4176AE51E6B665F005A5EBB /* Info.plist */,
 			);
 			path = workshopiOSUITests;
+			sourceTree = "<group>";
+		};
+		E4176AF21E6C4E40005A5EBB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E4176AF31E6C4E40005A5EBB /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+		E4176AF41E6C4E40005A5EBB /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		E4176AF51E6C4E40005A5EBB /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		E4176AF61E6C4E40005A5EBB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E4176AF71E6C4E40005A5EBB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		E4176AF81E6C4E40005A5EBB /* InitialSetUp */ = {
+			isa = PBXGroup;
+			children = (
+				E4176B001E6C50B0005A5EBB /* InitialSetUpViewController.h */,
+				E4176B011E6C50B0005A5EBB /* InitialSetUpViewController.m */,
+				E4176B031E6C50BF005A5EBB /* InitialSetUp.storyboard */,
+			);
+			path = InitialSetUp;
+			sourceTree = "<group>";
+		};
+		E4176AF91E6C4E40005A5EBB /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				E4176AFB1E6C5072005A5EBB /* AppUtils.h */,
+				E4176AFC1E6C5072005A5EBB /* AppUtils.m */,
+				E4176AFE1E6C5082005A5EBB /* Urls.h */,
+				E4176AFF1E6C508D005A5EBB /* Constants.h */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		E4176AFA1E6C4E86005A5EBB /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E4176B051E6C50E0005A5EBB /* TabBarViewController.h */,
+				E4176B061E6C50E0005A5EBB /* TabBarViewController.m */,
+			);
+			path = TabBarControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,8 +375,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4176ACE1E6B665F005A5EBB /* LaunchScreen.storyboard in Resources */,
+				E4176B0D1E6C5123005A5EBB /* About.storyboard in Resources */,
+				E4176B041E6C50BF005A5EBB /* InitialSetUp.storyboard in Resources */,
 				E4176ACB1E6B665F005A5EBB /* Assets.xcassets in Resources */,
+				E4176B0B1E6C5119005A5EBB /* Home.storyboard in Resources */,
+				E4176B091E6C510F005A5EBB /* Login.storyboard in Resources */,
 				E4176AC91E6B665F005A5EBB /* Main.storyboard in Resources */,
+				E4176B0F1E6C512F005A5EBB /* Creation.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,8 +454,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4176AC61E6B665F005A5EBB /* ViewController.m in Sources */,
+				E4176B071E6C50E0005A5EBB /* TabBarViewController.m in Sources */,
 				E4176AC31E6B665F005A5EBB /* AppDelegate.m in Sources */,
+				E4176B021E6C50B0005A5EBB /* InitialSetUpViewController.m in Sources */,
+				E4176AFD1E6C5072005A5EBB /* AppUtils.m in Sources */,
 				E4176AC01E6B665F005A5EBB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,6 +690,7 @@
 				E4176AEA1E6B665F005A5EBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4176AEB1E6B665F005A5EBB /* Build configuration list for PBXNativeTarget "workshopiOSTests" */ = {
 			isa = XCConfigurationList;
@@ -590,6 +699,7 @@
 				E4176AED1E6B665F005A5EBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4176AEE1E6B665F005A5EBB /* Build configuration list for PBXNativeTarget "workshopiOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -598,6 +708,7 @@
 				E4176AF01E6B665F005A5EBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
