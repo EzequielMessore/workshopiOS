@@ -6,8 +6,7 @@
 //  Copyright © 2017 Yasmin Benatti. All rights reserved.
 //
 
-#ifndef Urls_h
-#define Urls_h
+#define BASE_URL @"http://dev.ringa.com.br/level-up-api/api/"
 
-
-#endif /* Urls_h */
+#define URL_TEST    BASE_URL @"posts?uid=5"
+#define URL_TEST_LOGIN BASE_URL @"sessions"

@@ -1,27 +1,23 @@
 //
-//  TabBarViewController.m
-//  workshopiOS
+//  AboutViewController.m
+//  WorkshopObjC
 //
-//  Created by Yasmin Benatti on 2017-03-05.
+//  Created by Yasmin Benatti on 2017-02-06.
 //  Copyright © 2017 Yasmin Benatti. All rights reserved.
 //
 
-#import "TabBarViewController.h"
+#import "AboutViewController.h"
 
-@interface TabBarViewController ()
+@interface AboutViewController ()
 
 @end
 
-@implementation TabBarViewController
+@implementation AboutViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    //Navigation Bar
-    self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.hidden = NO;
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,3 +36,5 @@
 */
 
 @end
+
+

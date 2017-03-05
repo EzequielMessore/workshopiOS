@@ -1,27 +1,22 @@
 //
-//  TabBarViewController.m
+//  LoginViewController.m
 //  workshopiOS
 //
 //  Created by Yasmin Benatti on 2017-03-05.
 //  Copyright © 2017 Yasmin Benatti. All rights reserved.
 //
 
-#import "TabBarViewController.h"
+#import "LoginViewController.h"
 
-@interface TabBarViewController ()
+@interface LoginViewController ()
 
 @end
 
-@implementation TabBarViewController
+@implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    //Navigation Bar
-    self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.hidden = NO;
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "Constants.h"
 
 @interface AppUtils : NSObject
+
++(void) saveToUserDefault:(NSObject*)objectToSave withKey:(NSString*)key;
++(NSObject*) retrieveFromUserDefaultWithKey:(NSString*)key;
++(void) clearUserDefault;
+
++(UILabel *)createTitleLabelWithString:(NSString *)title;
++(UIView *)createTableViewHeaderWithTitle:(NSString *)title andView:(UIView *)view;
 
 @end

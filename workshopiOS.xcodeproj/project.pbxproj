@@ -23,6 +23,10 @@
 		E4176B0B1E6C5119005A5EBB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4176B0A1E6C5119005A5EBB /* Home.storyboard */; };
 		E4176B0D1E6C5123005A5EBB /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4176B0C1E6C5123005A5EBB /* About.storyboard */; };
 		E4176B0F1E6C512F005A5EBB /* Creation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4176B0E1E6C512F005A5EBB /* Creation.storyboard */; };
+		E4176B171E6C51D8005A5EBB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176B161E6C51D8005A5EBB /* LoginViewController.m */; };
+		E4176B1B1E6C53B4005A5EBB /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176B1A1E6C53B4005A5EBB /* HomeViewController.m */; };
+		E4176B1F1E6C53E1005A5EBB /* RaffleTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176B1E1E6C53E1005A5EBB /* RaffleTypeViewController.m */; };
+		E4176B231E6C5407005A5EBB /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176B221E6C5407005A5EBB /* AboutViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,14 @@
 		E4176B0A1E6C5119005A5EBB /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		E4176B0C1E6C5123005A5EBB /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		E4176B0E1E6C512F005A5EBB /* Creation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Creation.storyboard; sourceTree = "<group>"; };
+		E4176B151E6C51D8005A5EBB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		E4176B161E6C51D8005A5EBB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		E4176B191E6C53B4005A5EBB /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		E4176B1A1E6C53B4005A5EBB /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		E4176B1D1E6C53E1005A5EBB /* RaffleTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaffleTypeViewController.h; sourceTree = "<group>"; };
+		E4176B1E1E6C53E1005A5EBB /* RaffleTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaffleTypeViewController.m; sourceTree = "<group>"; };
+		E4176B211E6C5407005A5EBB /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		E4176B221E6C5407005A5EBB /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +208,10 @@
 		E4176AF21E6C4E40005A5EBB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E4176B101E6C51C3005A5EBB /* Login */,
+				E4176B121E6C51C3005A5EBB /* Home */,
+				E4176B131E6C51C3005A5EBB /* Creation */,
+				E4176B141E6C51C4005A5EBB /* About */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -263,6 +279,74 @@
 				E4176B061E6C50E0005A5EBB /* TabBarViewController.m */,
 			);
 			path = TabBarControllers;
+			sourceTree = "<group>";
+		};
+		E4176B101E6C51C3005A5EBB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E4176B111E6C51C3005A5EBB /* LoginViewController */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E4176B111E6C51C3005A5EBB /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E4176B151E6C51D8005A5EBB /* LoginViewController.h */,
+				E4176B161E6C51D8005A5EBB /* LoginViewController.m */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		E4176B121E6C51C3005A5EBB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E4176B181E6C53B4005A5EBB /* HomeViewController */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E4176B131E6C51C3005A5EBB /* Creation */ = {
+			isa = PBXGroup;
+			children = (
+				E4176B1C1E6C53E1005A5EBB /* RaffleTypeViewController */,
+			);
+			path = Creation;
+			sourceTree = "<group>";
+		};
+		E4176B141E6C51C4005A5EBB /* About */ = {
+			isa = PBXGroup;
+			children = (
+				E4176B201E6C5407005A5EBB /* AboutViewController */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		E4176B181E6C53B4005A5EBB /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E4176B191E6C53B4005A5EBB /* HomeViewController.h */,
+				E4176B1A1E6C53B4005A5EBB /* HomeViewController.m */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		E4176B1C1E6C53E1005A5EBB /* RaffleTypeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E4176B1D1E6C53E1005A5EBB /* RaffleTypeViewController.h */,
+				E4176B1E1E6C53E1005A5EBB /* RaffleTypeViewController.m */,
+			);
+			path = RaffleTypeViewController;
+			sourceTree = "<group>";
+		};
+		E4176B201E6C5407005A5EBB /* AboutViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E4176B211E6C5407005A5EBB /* AboutViewController.h */,
+				E4176B221E6C5407005A5EBB /* AboutViewController.m */,
+			);
+			path = AboutViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,10 +538,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4176B231E6C5407005A5EBB /* AboutViewController.m in Sources */,
 				E4176B071E6C50E0005A5EBB /* TabBarViewController.m in Sources */,
 				E4176AC31E6B665F005A5EBB /* AppDelegate.m in Sources */,
+				E4176B171E6C51D8005A5EBB /* LoginViewController.m in Sources */,
 				E4176B021E6C50B0005A5EBB /* InitialSetUpViewController.m in Sources */,
 				E4176AFD1E6C5072005A5EBB /* AppUtils.m in Sources */,
+				E4176B1B1E6C53B4005A5EBB /* HomeViewController.m in Sources */,
+				E4176B1F1E6C53E1005A5EBB /* RaffleTypeViewController.m in Sources */,
 				E4176AC01E6B665F005A5EBB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

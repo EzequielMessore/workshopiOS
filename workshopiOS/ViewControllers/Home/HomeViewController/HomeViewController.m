@@ -1,27 +1,22 @@
 //
-//  TabBarViewController.m
-//  workshopiOS
+//  HomeViewController.m
+//  WorkshopObjC
 //
-//  Created by Yasmin Benatti on 2017-03-05.
+//  Created by Yasmin Benatti on 2017-02-06.
 //  Copyright © 2017 Yasmin Benatti. All rights reserved.
 //
 
-#import "TabBarViewController.h"
+#import "HomeViewController.h"
 
-@interface TabBarViewController ()
+@interface HomeViewController ()
 
 @end
 
-@implementation TabBarViewController
+@implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    //Navigation Bar
-    self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.hidden = NO;
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,7 +1,53 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fJY-4y-fA0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Create-->
+        <scene sceneID="rBG-Ob-mBc">
+            <objects>
+                <navigationController id="fJY-4y-fA0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Create" image="ic_create" selectedImage="ic_create" id="vgU-Sx-1zr"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j5l-FY-R0r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bwS-Uy-eYn" kind="relationship" relationship="rootViewController" id="0xE-G2-1Qs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hD3-jV-meN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-556" y="169"/>
+        </scene>
+        <!--Raffle Type View Controller-->
+        <scene sceneID="6Z5-VG-Mih">
+            <objects>
+                <viewController id="bwS-Uy-eYn" customClass="RaffleTypeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W5e-ka-Afp"/>
+                        <viewControllerLayoutGuide type="bottom" id="qz6-f0-RcW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i4V-iu-k5C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DHJ-S2-wBT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TTL-oU-M1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="212" y="169"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_create" width="16" height="16"/>
+    </resources>
 </document>
