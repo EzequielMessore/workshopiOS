@@ -33,11 +33,15 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+    if([segue.identifier isEqualToString:@"createFollowersSegue"]) {
+        CreationFollowersViewController *vc = [segue destinationViewController];
+        vc.hidesBottomBarWhenPushed = YES;
+    }
 }
 
 
 - (IBAction)followersRaffleTouched:(id)sender {
+    [self performSegueWithIdentifier:@"createFollowersSegue" sender:nil];
 }
 
 - (IBAction)retweetRaffleTouched:(id)sender {

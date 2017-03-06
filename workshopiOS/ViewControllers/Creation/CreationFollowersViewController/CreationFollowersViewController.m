@@ -7,6 +7,8 @@
 //
 
 #import "CreationFollowersViewController.h"
+#import "RaffleDetailViewController.h"
+#import "AppUtils.h"
 
 @interface CreationFollowersViewController ()
 
@@ -17,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //Title
+    self.navigationItem.titleView = [AppUtils createTitleLabelWithString:@"Followers Raffle"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +29,37 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+-(void)viewWillAppear:(BOOL)animated {
+}
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"raffleDetailSegue"]) {
+        RaffleDetailViewController *vc = [segue destinationViewController];
+        vc.hidesBottomBarWhenPushed = YES;
+    }
 }
-*/
+
+
+- (IBAction)hideKeyboard:(id)sender {
+    [self.raffleNameTextField resignFirstResponder];
+    [self.numberOfWinnersTextField resignFirstResponder];
+}
+
+- (IBAction)testButtonTouched:(id)sender {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Raffle Test" message:@"Fulano was drawn! Congratulations! :D \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn!" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [alertController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alertController addAction: ok];
+    
+    [self.navigationController presentViewController:alertController animated:YES completion:nil];
+}
+
+- (IBAction)drawButtonTouched:(id)sender {
+    [self performSegueWithIdentifier:@"raffleDetailSegue" sender:nil];
+}
 
 @end

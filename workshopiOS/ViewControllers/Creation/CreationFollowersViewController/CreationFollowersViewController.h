@@ -10,4 +10,11 @@
 
 @interface CreationFollowersViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *raffleNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *numberOfWinnersTextField;
+
+- (IBAction)hideKeyboard:(id)sender;
+- (IBAction)testButtonTouched:(id)sender;
+- (IBAction)drawButtonTouched:(id)sender;
+
 @end
