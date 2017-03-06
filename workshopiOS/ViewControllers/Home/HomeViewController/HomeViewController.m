@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "RaffleDetailViewController.h"
 #import "AppUtils.h"
 
 @interface HomeViewController ()
@@ -85,6 +86,10 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Creation" bundle:nil];
+    RaffleDetailViewController *vc = [sb instantiateViewControllerWithIdentifier:@"RaffleDetailVC"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(BOOL) swipeTableCell:(MGSwipeTableCell*) cell tappedButtonAtIndex:(NSInteger) index direction:(MGSwipeDirection)direction fromExpansion:(BOOL) fromExpansion {
@@ -94,16 +99,6 @@
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return NO;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        
-    } else {
-        NSLog(@"Unhandled editing style! %ld", (long)editingStyle);
-    }
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
