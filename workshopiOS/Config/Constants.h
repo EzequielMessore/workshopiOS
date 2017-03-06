@@ -20,6 +20,7 @@
 #define COLOR_ROSE_MADDER [UIColor colorWithRed:226.0/255.0f green:32.0/255.0f blue:61.0/255.0f alpha:1]
 #define COLOR_ISABELLINE [UIColor colorWithRed:237.0/255.0f green:237.0/255.0f blue:237.0/255.0f alpha:1]
 #define COLOR_TULIPE [UIColor colorWithRed:250.0/255.0f green:124.0/255.0f blue:146.0/255.0f alpha:1]
+#define COLOR_CHARCOAL_20 [UIColor colorWithRed:50.0/255.0f green:70.0/255.0f blue:82.0/255.0f alpha:0.2]
 
 #define API_TOKEN @"api_token"
 

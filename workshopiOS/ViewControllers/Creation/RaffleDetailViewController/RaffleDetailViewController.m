@@ -23,6 +23,9 @@
     //Title
     self.navigationItem.titleView = [AppUtils createTitleLabelWithString:@"Raffle Detail"];
 
+    //Don't forget to register the cell when programatically setting the constraints
+    [[self tableView] registerClass:[PersonTableViewCell class] forCellReuseIdentifier:personCellIdentifier];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,17 +52,19 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PersonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"personCell" forIndexPath:indexPath];
+    PersonTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:personCellIdentifier forIndexPath:indexPath];
     
     if(cell == nil) {
-        cell = [[PersonTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"personCell"];
+        cell = [[PersonTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:personCellIdentifier];
     }
+    
+    cell = [cell fillUpCellWithPerson:[NSString stringWithFormat:@"Name %lu", (long)indexPath.row+1]];
+    cell.delegate = self;
     
     MGSwipeButton *button = [MGSwipeButton buttonWithTitle:@"Disquilify" backgroundColor:COLOR_CHARCOAL];
     button.buttonWidth = 100;
     cell.rightButtons = @[button];
     cell.rightSwipeSettings.transition = MGSwipeTransitionDrag;
-    cell.delegate = self;
         
     return cell;
 }
