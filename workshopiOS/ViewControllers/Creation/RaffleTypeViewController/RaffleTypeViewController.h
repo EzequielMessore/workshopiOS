@@ -10,4 +10,7 @@
 
 @interface RaffleTypeViewController : UIViewController
 
+- (IBAction)followersRaffleTouched:(id)sender;
+- (IBAction)retweetRaffleTouched:(id)sender;
+
 @end

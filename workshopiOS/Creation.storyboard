@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,10 +37,48 @@
                         <viewControllerLayoutGuide type="top" id="W5e-ka-Afp"/>
                         <viewControllerLayoutGuide type="bottom" id="qz6-f0-RcW"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="i4V-iu-k5C">
+                    <view key="view" contentMode="scaleToFill" id="n2l-e7-yCf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipU-B7-Eeb">
+                                <rect key="frame" x="128" y="190" width="120" height="120"/>
+                                <color key="backgroundColor" red="1" green="0.94509803920000002" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ipU-B7-Eeb" secondAttribute="height" multiplier="1:1" id="Ofd-QJ-OZQ"/>
+                                    <constraint firstAttribute="width" constant="120" id="WrV-dm-3I9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <state key="normal" title="Followers">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="followersRaffleTouched:" destination="bwS-Uy-eYn" eventType="touchUpInside" id="3Kp-GW-F0d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeY-ao-I4O">
+                                <rect key="frame" x="127" y="424" width="120" height="120"/>
+                                <color key="backgroundColor" red="0.39607843139999999" green="0.87058823529999996" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LeY-ao-I4O" secondAttribute="height" multiplier="1:1" id="116-Ae-qj2"/>
+                                    <constraint firstAttribute="width" constant="120" id="6cp-qw-IBU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <state key="normal" title="Retweet">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="retweetRaffleTouched:" destination="bwS-Uy-eYn" eventType="touchUpInside" id="sWC-dJ-V8w"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="LeY-ao-I4O" firstAttribute="centerX" secondItem="n2l-e7-yCf" secondAttribute="centerX" id="9fy-Y0-YCS"/>
+                            <constraint firstItem="LeY-ao-I4O" firstAttribute="centerY" secondItem="n2l-e7-yCf" secondAttribute="centerY" multiplier="1.45" id="9ga-xC-cUQ"/>
+                            <constraint firstItem="ipU-B7-Eeb" firstAttribute="centerY" secondItem="n2l-e7-yCf" secondAttribute="centerY" multiplier="0.75" id="X7d-fg-GS9"/>
+                            <constraint firstItem="ipU-B7-Eeb" firstAttribute="centerX" secondItem="n2l-e7-yCf" secondAttribute="centerX" id="zPd-G2-bOe"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DHJ-S2-wBT"/>
                     <connections>
