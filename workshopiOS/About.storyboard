@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,19 +36,135 @@
                         <viewControllerLayoutGuide type="top" id="2pt-4y-Wnf"/>
                         <viewControllerLayoutGuide type="bottom" id="gRV-lp-Doc"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="evG-kk-gyU">
+                    <view key="view" contentMode="scaleToFill" id="smE-vF-CUf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyW-nG-zc5" userLabel="mobile">
+                                <rect key="frame" x="0.0" y="310" width="375" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_phone_iphone_white_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="kPG-mo-gEo">
+                                        <rect key="frame" x="20" y="10" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="5cT-lq-rBN"/>
+                                            <constraint firstAttribute="width" secondItem="kPG-mo-gEo" secondAttribute="height" multiplier="1:1" id="mW3-53-AKH"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile App By Yasmin Benatti" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATy-PQ-2bo">
+                                        <rect key="frame" x="66" y="15" width="293" height="20"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.31372549020000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="kPG-mo-gEo" firstAttribute="leading" secondItem="QyW-nG-zc5" secondAttribute="leading" constant="20" id="VKp-G4-od6"/>
+                                    <constraint firstAttribute="height" constant="50" id="WTF-Hk-bFv"/>
+                                    <constraint firstAttribute="trailing" secondItem="ATy-PQ-2bo" secondAttribute="trailing" constant="16" id="Wq4-7u-AH7"/>
+                                    <constraint firstItem="ATy-PQ-2bo" firstAttribute="centerY" secondItem="kPG-mo-gEo" secondAttribute="centerY" id="bBx-Zl-5mb"/>
+                                    <constraint firstItem="kPG-mo-gEo" firstAttribute="centerY" secondItem="QyW-nG-zc5" secondAttribute="centerY" id="k1V-Z0-y1g"/>
+                                    <constraint firstItem="ATy-PQ-2bo" firstAttribute="leading" secondItem="kPG-mo-gEo" secondAttribute="trailing" constant="16" id="vaW-nL-pMn"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="I0a-cF-5eH" appends="YES" id="gKg-4L-KDL"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKG-nY-TGW" userLabel="api">
+                                <rect key="frame" x="0.0" y="380" width="375" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cloud_white_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="HaJ-ia-7cO">
+                                        <rect key="frame" x="20" y="10" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="HaJ-ia-7cO" secondAttribute="height" multiplier="1:1" id="Iz2-vA-ceF"/>
+                                            <constraint firstAttribute="height" constant="30" id="kMU-F9-l1i"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="API by Flavio Heleno" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCj-kK-M24">
+                                        <rect key="frame" x="66" y="15" width="293" height="20"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.65098039220000004" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="HaJ-ia-7cO" firstAttribute="centerY" secondItem="XKG-nY-TGW" secondAttribute="centerY" id="8wd-qF-Vmw"/>
+                                    <constraint firstAttribute="height" constant="50" id="BB2-jl-5Vx"/>
+                                    <constraint firstItem="OCj-kK-M24" firstAttribute="leading" secondItem="HaJ-ia-7cO" secondAttribute="trailing" constant="16" id="YyU-jw-9o5"/>
+                                    <constraint firstAttribute="trailing" secondItem="OCj-kK-M24" secondAttribute="trailing" constant="16" id="b6i-tt-wMW"/>
+                                    <constraint firstItem="HaJ-ia-7cO" firstAttribute="leading" secondItem="XKG-nY-TGW" secondAttribute="leading" constant="20" id="fMS-oS-FHR"/>
+                                    <constraint firstItem="OCj-kK-M24" firstAttribute="centerY" secondItem="HaJ-ia-7cO" secondAttribute="centerY" id="m3D-ja-MTh"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="TBB-Dm-kpn" appends="YES" id="Rge-D8-9kG"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sorteia.eu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syg-oV-JdS">
+                                <rect key="frame" x="36" y="558" width="303" height="24"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.65098039220000004" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="2lP-Fp-vmM" appends="YES" id="Yu1-bR-DYu"/>
+                                </connections>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmK-2I-gxE">
+                                <rect key="frame" x="107.5" y="114" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KmK-2I-gxE" secondAttribute="height" multiplier="1:1" id="EGu-8y-k19"/>
+                                    <constraint firstAttribute="width" constant="160" id="bji-3p-iBO"/>
+                                </constraints>
+                                <state key="normal" image="github"/>
+                                <connections>
+                                    <action selector="githubImageViewTapped:" destination="kLj-ll-cde" eventType="touchUpInside" id="t8P-5e-SL0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="XKG-nY-TGW" firstAttribute="leading" secondItem="smE-vF-CUf" secondAttribute="leading" id="1Lv-ZX-aLa"/>
+                            <constraint firstItem="KmK-2I-gxE" firstAttribute="centerX" secondItem="smE-vF-CUf" secondAttribute="centerX" id="4MJ-VR-Y9M"/>
+                            <constraint firstAttribute="trailing" secondItem="QyW-nG-zc5" secondAttribute="trailing" id="CBn-UC-qEm"/>
+                            <constraint firstItem="syg-oV-JdS" firstAttribute="leading" secondItem="smE-vF-CUf" secondAttribute="leading" constant="36" id="HAZ-OX-uUz"/>
+                            <constraint firstItem="QyW-nG-zc5" firstAttribute="top" secondItem="KmK-2I-gxE" secondAttribute="bottom" constant="36" id="iNX-4i-uKz"/>
+                            <constraint firstAttribute="trailing" secondItem="XKG-nY-TGW" secondAttribute="trailing" id="j5g-4x-ggA"/>
+                            <constraint firstItem="XKG-nY-TGW" firstAttribute="top" secondItem="QyW-nG-zc5" secondAttribute="bottom" constant="20" id="jce-ZZ-s8p"/>
+                            <constraint firstAttribute="trailing" secondItem="syg-oV-JdS" secondAttribute="trailing" constant="36" id="liH-Gx-369"/>
+                            <constraint firstItem="gRV-lp-Doc" firstAttribute="top" secondItem="syg-oV-JdS" secondAttribute="bottom" constant="36" id="rKC-EF-eK0"/>
+                            <constraint firstItem="KmK-2I-gxE" firstAttribute="top" secondItem="2pt-4y-Wnf" secondAttribute="bottom" constant="50" id="uha-L7-HHO"/>
+                            <constraint firstItem="QyW-nG-zc5" firstAttribute="leading" secondItem="smE-vF-CUf" secondAttribute="leading" id="zda-dg-4zl"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hT2-dw-5bT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDM-qj-N4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="I0a-cF-5eH">
+                    <connections>
+                        <action selector="mobileAppViewTapped:" destination="kLj-ll-cde" id="pIV-bX-K0s"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="TBB-Dm-kpn">
+                    <connections>
+                        <action selector="apiViewTapped:" destination="kLj-ll-cde" id="rJo-rG-m2j"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="2lP-Fp-vmM">
+                    <connections>
+                        <action selector="sorteiaEuLabelTapped:" destination="kLj-ll-cde" id="U0O-UW-gIq"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="212" y="169"/>
         </scene>
     </scenes>
     <resources>
-        <image name="ic_info" width="16" height="16"/>
+        <image name="github" width="768" height="768"/>
+        <image name="ic_cloud_white_48pt" width="48" height="48"/>
+        <image name="ic_info" width="24" height="24"/>
+        <image name="ic_phone_iphone_white_48pt" width="48" height="48"/>
     </resources>
 </document>

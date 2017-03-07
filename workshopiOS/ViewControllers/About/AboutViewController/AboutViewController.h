@@ -10,4 +10,9 @@
 
 @interface AboutViewController : UIViewController
 
+- (IBAction)githubImageViewTapped:(id)sender;
+- (IBAction)mobileAppViewTapped:(id)sender;
+- (IBAction)apiViewTapped:(id)sender;
+- (IBAction)sorteiaEuLabelTapped:(id)sender;
+
 @end
