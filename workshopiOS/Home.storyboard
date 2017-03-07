@@ -146,9 +146,8 @@
                                     <outlet property="delegate" destination="onD-E2-L43" id="her-3y-VEm"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FPX-3a-rf3" customClass="EmptyStateView">
-                                <rect key="frame" x="0.0" y="46" width="375" height="510"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FPX-3a-rf3" customClass="EmptyStateView">
+                                <rect key="frame" x="0.0" y="44" width="375" height="559"/>
                                 <color key="backgroundColor" red="0.39607843139999999" green="0.87058823529999996" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -157,14 +156,19 @@
                             <constraint firstAttribute="trailing" secondItem="AKJ-Zv-jZb" secondAttribute="trailing" id="9Kx-Sf-PZA"/>
                             <constraint firstItem="y0H-Md-nc5" firstAttribute="top" secondItem="AKJ-Zv-jZb" secondAttribute="bottom" id="9cf-0c-5XG"/>
                             <constraint firstAttribute="trailing" secondItem="y0H-Md-nc5" secondAttribute="trailing" id="AOh-1c-08R"/>
+                            <constraint firstItem="FPX-3a-rf3" firstAttribute="top" secondItem="AKJ-Zv-jZb" secondAttribute="bottom" id="FBO-2H-DF2"/>
+                            <constraint firstAttribute="bottom" secondItem="FPX-3a-rf3" secondAttribute="bottom" id="HfH-HG-2m0"/>
                             <constraint firstItem="AKJ-Zv-jZb" firstAttribute="top" secondItem="vu9-9P-0yV" secondAttribute="top" id="MO6-9J-wwF"/>
                             <constraint firstItem="s0I-Pq-eGn" firstAttribute="top" secondItem="y0H-Md-nc5" secondAttribute="bottom" id="RVt-xC-qzr"/>
                             <constraint firstItem="AKJ-Zv-jZb" firstAttribute="leading" secondItem="vu9-9P-0yV" secondAttribute="leading" id="puR-ox-l2l"/>
                             <constraint firstItem="y0H-Md-nc5" firstAttribute="leading" secondItem="vu9-9P-0yV" secondAttribute="leading" id="rvK-IZ-nqs"/>
+                            <constraint firstItem="FPX-3a-rf3" firstAttribute="leading" secondItem="vu9-9P-0yV" secondAttribute="leading" id="tSi-2C-3sD"/>
+                            <constraint firstAttribute="trailing" secondItem="FPX-3a-rf3" secondAttribute="trailing" id="uie-MO-jKk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="c5S-5Y-obl"/>
                     <connections>
+                        <outlet property="emptyStateView" destination="FPX-3a-rf3" id="5QN-Tg-SH3"/>
                         <outlet property="segmentedControl" destination="mJn-2K-LGD" id="Fxa-y8-kbI"/>
                         <outlet property="tableView" destination="y0H-Md-nc5" id="e5c-gN-XT8"/>
                     </connections>

@@ -34,6 +34,10 @@
     //Initiations
     self.rafflesArray = [NSArray new];
     self.responseDictionary = [NSDictionary new];
+    
+    //Empty Sate
+    [self.emptyStateView setHidden:YES];
+    [self.emptyStateView.message setText:@"Coming Soon!"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -119,9 +123,10 @@
 
 - (IBAction)segmentedControlTouched:(id)sender {
     if(self.segmentedControl.selectedSegmentIndex == 0) {
+        [self.emptyStateView setHidden:YES];
     } else {
+        [self.emptyStateView setHidden:NO];
     }
 }
-
 
 @end

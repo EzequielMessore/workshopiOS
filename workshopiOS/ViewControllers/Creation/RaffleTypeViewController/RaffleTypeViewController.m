@@ -45,6 +45,7 @@
 }
 
 - (IBAction)retweetRaffleTouched:(id)sender {
+    [self performSegueWithIdentifier:@"createRetweetSegue" sender:nil];
 }
 
 @end
