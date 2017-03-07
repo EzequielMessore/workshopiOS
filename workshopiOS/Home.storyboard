@@ -146,6 +146,11 @@
                                     <outlet property="delegate" destination="onD-E2-L43" id="her-3y-VEm"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FPX-3a-rf3" customClass="EmptyStateView">
+                                <rect key="frame" x="0.0" y="46" width="375" height="510"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.39607843139999999" green="0.87058823529999996" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

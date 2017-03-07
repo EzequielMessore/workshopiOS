@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "RaffleTableViewCell.h"
+#import "EmptyStateView.h"
 
 @interface HomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (weak, nonatomic) IBOutlet EmptyStateView *emptyStateView;
 
 - (IBAction)segmentedControlTouched:(id)sender;
 

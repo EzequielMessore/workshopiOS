@@ -83,6 +83,7 @@
                     <navigationItem key="navigationItem" id="DHJ-S2-wBT"/>
                     <connections>
                         <segue destination="Wxw-Gr-YLw" kind="show" identifier="createFollowersSegue" id="u5e-VJ-xIo"/>
+                        <segue destination="M8R-LN-7nJ" kind="show" identifier="createRetweetSegue" id="PdP-48-B9m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TTL-oU-M1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -310,6 +311,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ny-85-odS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1194" y="-210"/>
+        </scene>
+        <!--Creation Retweet View Controller-->
+        <scene sceneID="9EK-zu-lCP">
+            <objects>
+                <viewController id="M8R-LN-7nJ" customClass="CreationRetweetViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eXZ-Z6-077"/>
+                        <viewControllerLayoutGuide type="bottom" id="FZJ-na-Z2R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QQ9-yc-0j8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQe-gU-Ufe" customClass="EmptyStateView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IQe-gU-Ufe" firstAttribute="leading" secondItem="QQ9-yc-0j8" secondAttribute="leading" id="HbP-cX-Gay"/>
+                            <constraint firstItem="FZJ-na-Z2R" firstAttribute="top" secondItem="IQe-gU-Ufe" secondAttribute="bottom" id="ba4-il-Yjk"/>
+                            <constraint firstItem="IQe-gU-Ufe" firstAttribute="top" secondItem="eXZ-Z6-077" secondAttribute="bottom" id="rRx-9P-2P4"/>
+                            <constraint firstAttribute="trailing" secondItem="IQe-gU-Ufe" secondAttribute="trailing" id="yEG-wt-y4n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emptyStateView" destination="IQe-gU-Ufe" id="gvh-6v-gEa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hDj-U2-I3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1193" y="566"/>
         </scene>
     </scenes>
     <resources>
