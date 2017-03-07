@@ -31,6 +31,8 @@
 		E4176B2B1E6C8E45005A5EBB /* PersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176B291E6C8E45005A5EBB /* PersonTableViewCell.m */; };
 		E4176B2F1E6CEDB0005A5EBB /* RaffleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176B2E1E6CEDB0005A5EBB /* RaffleDetailViewController.m */; };
 		E4EB94481E6E11C3001CE6C5 /* CreationFollowersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EB94471E6E11C3001CE6C5 /* CreationFollowersViewController.m */; };
+		E4EB944D1E6ED1C3001CE6C5 /* EmptyStateView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EB944B1E6ED1C3001CE6C5 /* EmptyStateView.m */; };
+		E4EB944E1E6ED1C3001CE6C5 /* EmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4EB944C1E6ED1C3001CE6C5 /* EmptyStateView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,9 @@
 		E4176B2E1E6CEDB0005A5EBB /* RaffleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaffleDetailViewController.m; sourceTree = "<group>"; };
 		E4EB94461E6E11C3001CE6C5 /* CreationFollowersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreationFollowersViewController.h; sourceTree = "<group>"; };
 		E4EB94471E6E11C3001CE6C5 /* CreationFollowersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreationFollowersViewController.m; sourceTree = "<group>"; };
+		E4EB944A1E6ED1C3001CE6C5 /* EmptyStateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyStateView.h; sourceTree = "<group>"; };
+		E4EB944B1E6ED1C3001CE6C5 /* EmptyStateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyStateView.m; sourceTree = "<group>"; };
+		E4EB944C1E6ED1C3001CE6C5 /* EmptyStateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyStateView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +245,7 @@
 		E4176AF41E6C4E40005A5EBB /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				E4EB94491E6ED1C3001CE6C5 /* EmptyStateView */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -401,6 +407,16 @@
 			path = CreationFollowersViewController;
 			sourceTree = "<group>";
 		};
+		E4EB94491E6ED1C3001CE6C5 /* EmptyStateView */ = {
+			isa = PBXGroup;
+			children = (
+				E4EB944A1E6ED1C3001CE6C5 /* EmptyStateView.h */,
+				E4EB944B1E6ED1C3001CE6C5 /* EmptyStateView.m */,
+				E4EB944C1E6ED1C3001CE6C5 /* EmptyStateView.xib */,
+			);
+			path = EmptyStateView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -510,6 +526,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4EB944E1E6ED1C3001CE6C5 /* EmptyStateView.xib in Resources */,
 				E4176ACE1E6B665F005A5EBB /* LaunchScreen.storyboard in Resources */,
 				E4176B0D1E6C5123005A5EBB /* About.storyboard in Resources */,
 				E4176B041E6C50BF005A5EBB /* InitialSetUp.storyboard in Resources */,
@@ -590,6 +607,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4EB944D1E6ED1C3001CE6C5 /* EmptyStateView.m in Sources */,
 				E4176B231E6C5407005A5EBB /* AboutViewController.m in Sources */,
 				E4176B071E6C50E0005A5EBB /* TabBarViewController.m in Sources */,
 				E4EB94481E6E11C3001CE6C5 /* CreationFollowersViewController.m in Sources */,
