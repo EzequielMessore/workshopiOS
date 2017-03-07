@@ -34,6 +34,8 @@
 		E4EB944D1E6ED1C3001CE6C5 /* EmptyStateView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EB944B1E6ED1C3001CE6C5 /* EmptyStateView.m */; };
 		E4EB944E1E6ED1C3001CE6C5 /* EmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4EB944C1E6ED1C3001CE6C5 /* EmptyStateView.xib */; };
 		E4EB94521E6ED2E0001CE6C5 /* CreationRetweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EB94511E6ED2E0001CE6C5 /* CreationRetweetViewController.m */; };
+		E4EB94561E6ED606001CE6C5 /* Raffle.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EB94551E6ED606001CE6C5 /* Raffle.m */; };
+		E4EB945A1E6ED613001CE6C5 /* RaffleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EB94591E6ED613001CE6C5 /* RaffleParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,10 @@
 		E4EB944C1E6ED1C3001CE6C5 /* EmptyStateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyStateView.xib; sourceTree = "<group>"; };
 		E4EB94501E6ED2E0001CE6C5 /* CreationRetweetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreationRetweetViewController.h; sourceTree = "<group>"; };
 		E4EB94511E6ED2E0001CE6C5 /* CreationRetweetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreationRetweetViewController.m; sourceTree = "<group>"; };
+		E4EB94541E6ED606001CE6C5 /* Raffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Raffle.h; sourceTree = "<group>"; };
+		E4EB94551E6ED606001CE6C5 /* Raffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Raffle.m; sourceTree = "<group>"; };
+		E4EB94581E6ED613001CE6C5 /* RaffleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaffleParser.h; sourceTree = "<group>"; };
+		E4EB94591E6ED613001CE6C5 /* RaffleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaffleParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +262,7 @@
 		E4176AF51E6C4E40005A5EBB /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
+				E4EB94571E6ED613001CE6C5 /* RaffleParser */,
 			);
 			path = Parsers;
 			sourceTree = "<group>";
@@ -263,6 +270,7 @@
 		E4176AF61E6C4E40005A5EBB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E4EB94531E6ED606001CE6C5 /* Raffle */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -428,6 +436,24 @@
 				E4EB94511E6ED2E0001CE6C5 /* CreationRetweetViewController.m */,
 			);
 			path = CreationRetweetViewController;
+			sourceTree = "<group>";
+		};
+		E4EB94531E6ED606001CE6C5 /* Raffle */ = {
+			isa = PBXGroup;
+			children = (
+				E4EB94541E6ED606001CE6C5 /* Raffle.h */,
+				E4EB94551E6ED606001CE6C5 /* Raffle.m */,
+			);
+			path = Raffle;
+			sourceTree = "<group>";
+		};
+		E4EB94571E6ED613001CE6C5 /* RaffleParser */ = {
+			isa = PBXGroup;
+			children = (
+				E4EB94581E6ED613001CE6C5 /* RaffleParser.h */,
+				E4EB94591E6ED613001CE6C5 /* RaffleParser.m */,
+			);
+			path = RaffleParser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -620,9 +646,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4EB945A1E6ED613001CE6C5 /* RaffleParser.m in Sources */,
 				E4EB94521E6ED2E0001CE6C5 /* CreationRetweetViewController.m in Sources */,
 				E4EB944D1E6ED1C3001CE6C5 /* EmptyStateView.m in Sources */,
 				E4176B231E6C5407005A5EBB /* AboutViewController.m in Sources */,
+				E4EB94561E6ED606001CE6C5 /* Raffle.m in Sources */,
 				E4176B071E6C50E0005A5EBB /* TabBarViewController.m in Sources */,
 				E4EB94481E6E11C3001CE6C5 /* CreationFollowersViewController.m in Sources */,
 				E4176AC31E6B665F005A5EBB /* AppDelegate.m in Sources */,
