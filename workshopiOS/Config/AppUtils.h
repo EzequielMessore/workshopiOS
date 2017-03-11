@@ -18,5 +18,6 @@
 
 +(UILabel *)createTitleLabelWithString:(NSString *)title;
 +(UIView *)createTableViewHeaderWithTitle:(NSString *)title andView:(UIView *)view;
++(void)setTextFieldLeftImageWithImage:(UIImage *)image andTextField:(UITextField *)textField andPadding:(CGFloat)leftPadding;
 
 @end

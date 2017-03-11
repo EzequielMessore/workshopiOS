@@ -38,6 +38,7 @@
     //Empty Sate
     [self.emptyStateView setHidden:YES];
     [self.emptyStateView.message setText:@"Coming Soon!"];
+    
 }
 
 - (void)didReceiveMemoryWarning {

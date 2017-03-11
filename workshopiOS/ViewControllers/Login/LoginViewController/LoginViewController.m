@@ -23,6 +23,10 @@
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.navigationBar.hidden = YES;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    
+    [AppUtils setTextFieldLeftImageWithImage:[UIImage imageNamed:@"ic_lock_white_48pt"] andTextField:self.emailTextField andPadding:5.0];
+    [AppUtils setTextFieldLeftImageWithImage:[UIImage imageNamed:@"ic_email_white_48pt"] andTextField:self.passwordTextField andPadding:5.0];
+    
 }
 
 - (void)didReceiveMemoryWarning {

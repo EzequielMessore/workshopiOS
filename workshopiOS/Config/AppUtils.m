@@ -56,4 +56,24 @@
     return headerView;
 }
 
+//Text Field
++(void)setTextFieldLeftImageWithImage:(UIImage *)image andTextField:(UITextField *)textField andPadding:(CGFloat)leftPadding {
+    [textField setLeftViewMode:UITextFieldViewModeAlways];
+    
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(leftPadding, 0, 20, 20)];
+    imageView.image = image;
+    [imageView.layer setMasksToBounds:YES];
+    
+    double width = leftPadding + 20;
+    
+    if(textField.borderStyle == UITextBorderStyleLine || textField.borderStyle == UITextBorderStyleNone) {
+        width += 5;
+    }
+    
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, width, 20)];
+    [view addSubview:imageView];
+    
+    textField.leftView = view;
+}
+
 @end
