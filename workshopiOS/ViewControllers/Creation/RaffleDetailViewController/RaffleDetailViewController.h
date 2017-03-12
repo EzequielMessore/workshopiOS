@@ -13,6 +13,7 @@
 @interface RaffleDetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate>
 
 @property (strong, nonatomic) Raffle *currentRaffle;
+@property (nonatomic) BOOL isCreatingRaffle;
 
 @property (weak, nonatomic) IBOutlet UILabel *raffleNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *createdOnLabel;

@@ -25,12 +25,32 @@
 
     //Don't forget to register the cell when programatically setting the constraints
     [[self tableView] registerClass:[PersonTableViewCell class] forCellReuseIdentifier:personCellIdentifier];
-    [self.tableView reloadData];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self fillUpScreen];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Helpers
+
+-(void)fillUpScreen {
+    if(self.isCreatingRaffle) {
+        [self.navigationItem setHidesBackButton:YES];
+        UIBarButtonItem *done = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneTouched:)];
+        self.navigationItem.rightBarButtonItem = done;
+    } else {
+        [self.navigationItem setHidesBackButton:NO];
+    }
+    
+    [self.raffleNameLabel setText:self.currentRaffle.name];
+    [self.createdOnLabel setText:[NSString stringWithFormat:@"created on %@", self.currentRaffle.createdAt]];
+    [self.drawnOnLabel setText:[NSString stringWithFormat:@"drawn on %@", self.currentRaffle.updatedAt]];
 }
 
 /*
@@ -96,5 +116,10 @@
     return NO;
 }
 
+#pragma mark - IBActions
+
+-(IBAction)doneTouched:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:NO];
+}
 
 @end

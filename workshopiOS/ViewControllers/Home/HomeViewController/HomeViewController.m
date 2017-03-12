@@ -136,6 +136,7 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Creation" bundle:nil];
     RaffleDetailViewController *vc = [sb instantiateViewControllerWithIdentifier:@"RaffleDetailVC"];
     vc.currentRaffle = raffle;
+    vc.isCreatingRaffle = NO;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

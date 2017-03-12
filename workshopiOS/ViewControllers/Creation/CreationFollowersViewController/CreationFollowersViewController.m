@@ -41,10 +41,10 @@
     if([segue.identifier isEqualToString:@"raffleDetailSegue"]) {
         RaffleDetailViewController *vc = [segue destinationViewController];
         vc.currentRaffle = self.createdRaffle;
+        vc.isCreatingRaffle = YES;
         vc.hidesBottomBarWhenPushed = YES;
     }
 }
-
 
 - (IBAction)hideKeyboard:(id)sender {
     [self.raffleNameTextField resignFirstResponder];
