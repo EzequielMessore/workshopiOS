@@ -13,5 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *raffleNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *raffleUrlLabel;
+@property (weak, nonatomic) IBOutlet UILabel *raffleCreatedLabel;
 
 @end

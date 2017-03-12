@@ -14,5 +14,6 @@
 
 +(RaffleManager*) sharedInstance;
 -(void)getRafflesWithCompletion:(void (^) (BOOL isSuccess, NSArray *raffles, int count, NSString *message, NSError *error)) completion;
+-(void)createRaffleWithParameters:(NSDictionary *)parameters andCompletion:(void (^) (BOOL isSuccess, Raffle *raffle, NSString *message, NSError *error)) completion;
 
 @end

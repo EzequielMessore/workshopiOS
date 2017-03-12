@@ -14,7 +14,7 @@
     Raffle *raffle = [Raffle new];
     
     if([raffleToParse objectForKey:@"drawn"]) {
-        raffle.drawn = (BOOL)[raffleToParse objectForKey:@"drawn"];
+        raffle.drawn = [[raffleToParse objectForKey:@"drawn"] boolValue];
     }
     
     if([raffleToParse objectForKey:@"hash"]) {
@@ -27,13 +27,25 @@
         raffle.type = [raffleToParse objectForKey:@"type"];
     }
     if([raffleToParse objectForKey:@"url"]) {
-        raffle.url = [raffleToParse objectForKey:@"url"];
+        if(![[raffleToParse objectForKey:@"url"] isKindOfClass:[NSNull class]]) {
+            raffle.url = [raffleToParse objectForKey:@"url"];
+        }
     }
     if([raffleToParse objectForKey:@"createdAt"]) {
-        raffle.createdAt = [raffleToParse objectForKey:@"createdAt"];
+        double timestampval =  [[raffleToParse objectForKey:@"createdAt"] doubleValue];
+        NSTimeInterval timestamp = (NSTimeInterval)timestampval;
+        NSDate *createdtimestamp = [NSDate dateWithTimeIntervalSince1970:timestamp];
+
+        raffle.createdAt = [NSString stringWithFormat:@"%@", createdtimestamp];
     }
     if([raffleToParse objectForKey:@"updatedAt"]) {
-        raffle.updatedAt = [raffleToParse objectForKey:@"updatedAt"];
+        if(![[raffleToParse objectForKey:@"updatedAt"] isKindOfClass:[NSNull class]]) {
+            double timestampval =  [[raffleToParse objectForKey:@"updatedAt"] doubleValue];
+            NSTimeInterval timestamp = (NSTimeInterval)timestampval;
+            NSDate *updatedtimestamp = [NSDate dateWithTimeIntervalSince1970:timestamp];
+            
+            raffle.updatedAt = [NSString stringWithFormat:@"%@", updatedtimestamp];
+        }
     }
     
     return raffle;

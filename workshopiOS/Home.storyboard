@@ -136,6 +136,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="raffleCreatedLabel" destination="CFA-cp-eDB" id="XOY-Qm-JQB"/>
                                             <outlet property="raffleNameLabel" destination="r0y-SA-L6p" id="xW7-QL-hk4"/>
                                             <outlet property="raffleUrlLabel" destination="aGC-wM-xYU" id="tdz-yQ-Iqb"/>
                                         </connections>

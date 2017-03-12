@@ -54,8 +54,8 @@ static AFHTTPSessionManager *manager = nil;
             NSLog(@"success!");
             completion(YES, responseObject, nil, nil);
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            NSLog(@"error: %@", error);
-            completion(NO, nil, @"messageHere", error);
+            NSDictionary *errorDictionary = error.userInfo;
+            completion(NO, nil, [errorDictionary objectForKey:@"NSLocalizedDescription"], error);
         }];
     }
 }

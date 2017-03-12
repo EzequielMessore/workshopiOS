@@ -8,6 +8,7 @@
 
 #import "RaffleManager.h"
 #import "Urls.h"
+#import "AppUtils.h"
 
 @implementation RaffleManager
 
@@ -41,6 +42,22 @@ static RaffleManager *sharedInstance = nil;
             completion(YES, raffles, count, nil, nil);
         } else {
             completion(NO, nil, 0, message, error);
+        }
+    }];
+}
+
+-(void)createRaffleWithParameters:(NSDictionary *)parameters andCompletion:(void (^) (BOOL isSuccess, Raffle *raffle, NSString *message, NSError *error)) completion {
+    
+    [self callAPIWithParameters:parameters andUrl:URL_RAFFLE andMethodType:@"POST" andCompletion:^(BOOL success, id response, NSString *message, NSError *error) {
+        if(success) {
+            NSDictionary *responseDictionary = (NSDictionary *)[response objectForKey:@"data"];
+            
+            RaffleParser *raffleParser = [RaffleParser new];
+            Raffle *raffle = [raffleParser parseToRaffle:responseDictionary];
+
+            completion(YES, raffle, nil, nil);
+        } else {
+            completion(NO, nil, message, error);
         }
     }];
 }

@@ -23,4 +23,6 @@
 #define COLOR_CHARCOAL_20 [UIColor colorWithRed:50.0/255.0f green:70.0/255.0f blue:82.0/255.0f alpha:0.2]
 
 #define API_TOKEN @"api_token"
+#define TYPE_FOLLOWER @"follower"
+#define TYPE_RETWEET @"retweet"
 

@@ -8,6 +8,7 @@
 
 #import "CreationFollowersViewController.h"
 #import "RaffleDetailViewController.h"
+#import "RaffleManager.h"
 #import "AppUtils.h"
 
 @interface CreationFollowersViewController ()
@@ -59,7 +60,18 @@
 }
 
 - (IBAction)drawButtonTouched:(id)sender {
-    [self performSegueWithIdentifier:@"raffleDetailSegue" sender:nil];
+    
+    NSDictionary *creationParameters = @{@"type" : TYPE_FOLLOWER,
+                                         @"name" : self.raffleNameTextField.text};
+    
+    [[RaffleManager sharedInstance]createRaffleWithParameters:creationParameters andCompletion:^(BOOL isSuccess, Raffle *raffle, NSString *message, NSError *error) {
+        if(isSuccess) {
+            [self performSegueWithIdentifier:@"raffleDetailSegue" sender:nil];
+        } else {
+            [self.navigationController presentViewController:[AppUtils setupAlertWithMessage:message] animated:YES completion:nil];
+        }
+    }];
+    
 }
 
 @end

@@ -112,6 +112,15 @@
     [cell.raffleNameLabel setText:raffle.name];
     [cell.raffleUrlLabel setText:raffle.url];
     
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
+    NSDate *raffleDate = [NSDate new];
+    raffleDate = [dateFormatter dateFromString:raffle.createdAt];
+    NSTimeInterval passedTime = [raffleDate timeIntervalSinceDate:today];
+    
+    [cell.raffleCreatedLabel setText:[NSString stringWithFormat:@"created %0.0f min ago", passedTime]];
+    
     return cell;
 }
 
@@ -133,7 +142,7 @@
 -(BOOL) swipeTableCell:(MGSwipeTableCell*) cell tappedButtonAtIndex:(NSInteger) index direction:(MGSwipeDirection)direction fromExpansion:(BOOL) fromExpansion {
     Raffle *raffleSelected = [self.rafflesArray objectAtIndex:index];
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    pasteboard.string = raffleSelected.url;
+    pasteboard.string = [NSString stringWithFormat:@"https://sorteiaeu.flavioheleno.com/raffles/%@", raffleSelected.raffleId];
     
     return YES;
 }
