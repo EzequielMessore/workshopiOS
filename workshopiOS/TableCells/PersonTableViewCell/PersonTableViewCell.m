@@ -8,6 +8,7 @@
 
 #import "PersonTableViewCell.h"
 #import "Constants.h"
+#import "AppUtils.h"
 
 @implementation PersonTableViewCell
 
@@ -37,8 +38,9 @@
 
 #pragma mark - Content Setup
 
--(PersonTableViewCell *)fillUpCellWithPerson:(NSString *)personName {
-    [self.personNameLabel setText:personName];
+-(PersonTableViewCell *)fillUpCellWithPerson:(Person *)person {
+    [self.personNameLabel setText:person.name];
+    [AppUtils setupImageWithUrl:person.picture andPlaceholder:@"" andImageView:self.personImageView];
     
     return self;
 }

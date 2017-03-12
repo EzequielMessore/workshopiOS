@@ -26,6 +26,25 @@ static RaffleManager *sharedInstance = nil;
     return sharedInstance;
 }
 
+-(void)getSpecifiRaffleWithRaffleHash:(NSString *)raffleHash andCompletion:(void (^) (BOOL isSuccess, Raffle *raffle, NSString *message, NSError *error)) completion {
+    
+    NSString *url = [NSString stringWithFormat:@"%@/%@", URL_RAFFLE, raffleHash];
+    
+    
+    [self callAPIWithParameters:nil andUrl:url andMethodType:@"GET" andCompletion:^(BOOL success, id response, NSString *message, NSError *error) {
+        if(success) {
+            NSDictionary *responseDictionary = (NSDictionary *)[response objectForKey:@"data"];
+            
+            RaffleParser *raffleParser = [RaffleParser new];
+            Raffle *raffle = [raffleParser parseToRaffle:responseDictionary];
+            
+            completion(YES, raffle, nil, nil);
+        } else {
+            completion(NO, nil, message, error);
+        }
+    }];
+}
+
 -(void)getRafflesWithCompletion:(void (^) (BOOL isSuccess, NSArray *raffles, int count, NSString *message, NSError *error)) completion {
     
     [self callAPIWithParameters:nil andUrl:URL_RAFFLE andMethodType:@"GET" andCompletion:^(BOOL success, id response, NSString *message, NSError *error) {
@@ -74,5 +93,30 @@ static RaffleManager *sharedInstance = nil;
         }
     }];
 }
+
+-(void)getAllDrawsWithRaffleHash:(NSString *)raffleHash andCompletion:(void (^) (BOOL isSuccess, NSArray *draws, int count, NSString *message, NSError *error)) completion {
+    
+    NSString *url = [NSString stringWithFormat:@"%@/%@/draws", URL_RAFFLE, raffleHash];
+    
+    
+    [self callAPIWithParameters:nil andUrl:url andMethodType:@"GET" andCompletion:^(BOOL success, id response, NSString *message, NSError *error) {
+        if(success) {
+            NSDictionary *responseDictionary = (NSDictionary *)[response objectForKey:@"data"];
+            NSMutableArray *draws = [NSMutableArray new];
+            
+            int count = [[responseDictionary objectForKey:@"count"] intValue];
+            
+            DrawParser *drawParser = [DrawParser new];
+            for (NSDictionary *drawDictionary in [responseDictionary objectForKey:@"list"]) {
+                [draws addObject:[drawParser parseToDraw:drawDictionary]];
+            }
+            
+            completion(YES, draws, count, nil, nil);
+        } else {
+            completion(NO, nil, 0, message, error);
+        }
+    }];
+}
+
 
 @end

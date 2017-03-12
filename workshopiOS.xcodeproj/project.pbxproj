@@ -34,6 +34,10 @@
 		E438AA441E75DFE500A2C15F /* NSURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E438AA3F1E75DFE500A2C15F /* NSURLSessionManager.m */; };
 		E438AA451E75DFE500A2C15F /* RaffleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E438AA421E75DFE500A2C15F /* RaffleManager.m */; };
 		E438AA481E75E04800A2C15F /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E438AA471E75E04800A2C15F /* LoginManager.m */; };
+		E438AA501E76000E00A2C15F /* Draw.m in Sources */ = {isa = PBXBuildFile; fileRef = E438AA4F1E76000E00A2C15F /* Draw.m */; };
+		E438AA541E76008700A2C15F /* DrawParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E438AA531E76008700A2C15F /* DrawParser.m */; };
+		E438AA581E76037A00A2C15F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = E438AA571E76037A00A2C15F /* Person.m */; };
+		E438AA5C1E7603D200A2C15F /* PersonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E438AA5B1E7603D200A2C15F /* PersonParser.m */; };
 		E4EB94481E6E11C3001CE6C5 /* CreationFollowersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EB94471E6E11C3001CE6C5 /* CreationFollowersViewController.m */; };
 		E4EB944D1E6ED1C3001CE6C5 /* EmptyStateView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EB944B1E6ED1C3001CE6C5 /* EmptyStateView.m */; };
 		E4EB944E1E6ED1C3001CE6C5 /* EmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4EB944C1E6ED1C3001CE6C5 /* EmptyStateView.xib */; };
@@ -112,6 +116,14 @@
 		E438AA421E75DFE500A2C15F /* RaffleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaffleManager.m; sourceTree = "<group>"; };
 		E438AA461E75E04800A2C15F /* LoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginManager.h; sourceTree = "<group>"; };
 		E438AA471E75E04800A2C15F /* LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginManager.m; sourceTree = "<group>"; };
+		E438AA4E1E76000E00A2C15F /* Draw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Draw.h; sourceTree = "<group>"; };
+		E438AA4F1E76000E00A2C15F /* Draw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Draw.m; sourceTree = "<group>"; };
+		E438AA521E76008700A2C15F /* DrawParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawParser.h; sourceTree = "<group>"; };
+		E438AA531E76008700A2C15F /* DrawParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawParser.m; sourceTree = "<group>"; };
+		E438AA561E76037A00A2C15F /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		E438AA571E76037A00A2C15F /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		E438AA5A1E7603D200A2C15F /* PersonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonParser.h; sourceTree = "<group>"; };
+		E438AA5B1E7603D200A2C15F /* PersonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonParser.m; sourceTree = "<group>"; };
 		E4EB94461E6E11C3001CE6C5 /* CreationFollowersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreationFollowersViewController.h; sourceTree = "<group>"; };
 		E4EB94471E6E11C3001CE6C5 /* CreationFollowersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreationFollowersViewController.m; sourceTree = "<group>"; };
 		E4EB944A1E6ED1C3001CE6C5 /* EmptyStateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyStateView.h; sourceTree = "<group>"; };
@@ -274,6 +286,8 @@
 		E4176AF51E6C4E40005A5EBB /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
+				E438AA591E7603C900A2C15F /* PersonParser */,
+				E438AA511E76007A00A2C15F /* DrawParser */,
 				E4EB94571E6ED613001CE6C5 /* RaffleParser */,
 			);
 			path = Parsers;
@@ -282,6 +296,8 @@
 		E4176AF61E6C4E40005A5EBB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E438AA551E76036900A2C15F /* Person */,
+				E438AA4D1E76000100A2C15F /* Draw */,
 				E4EB94531E6ED606001CE6C5 /* Raffle */,
 			);
 			path = Models;
@@ -460,6 +476,42 @@
 				E438AA421E75DFE500A2C15F /* RaffleManager.m */,
 			);
 			path = RaffleManager;
+			sourceTree = "<group>";
+		};
+		E438AA4D1E76000100A2C15F /* Draw */ = {
+			isa = PBXGroup;
+			children = (
+				E438AA4E1E76000E00A2C15F /* Draw.h */,
+				E438AA4F1E76000E00A2C15F /* Draw.m */,
+			);
+			path = Draw;
+			sourceTree = "<group>";
+		};
+		E438AA511E76007A00A2C15F /* DrawParser */ = {
+			isa = PBXGroup;
+			children = (
+				E438AA521E76008700A2C15F /* DrawParser.h */,
+				E438AA531E76008700A2C15F /* DrawParser.m */,
+			);
+			path = DrawParser;
+			sourceTree = "<group>";
+		};
+		E438AA551E76036900A2C15F /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				E438AA561E76037A00A2C15F /* Person.h */,
+				E438AA571E76037A00A2C15F /* Person.m */,
+			);
+			path = Person;
+			sourceTree = "<group>";
+		};
+		E438AA591E7603C900A2C15F /* PersonParser */ = {
+			isa = PBXGroup;
+			children = (
+				E438AA5A1E7603D200A2C15F /* PersonParser.h */,
+				E438AA5B1E7603D200A2C15F /* PersonParser.m */,
+			);
+			path = PersonParser;
 			sourceTree = "<group>";
 		};
 		E4EB94451E6E11B1001CE6C5 /* CreationFollowersViewController */ = {
@@ -700,6 +752,7 @@
 			files = (
 				E4EB945A1E6ED613001CE6C5 /* RaffleParser.m in Sources */,
 				E438AA451E75DFE500A2C15F /* RaffleManager.m in Sources */,
+				E438AA541E76008700A2C15F /* DrawParser.m in Sources */,
 				E4EB94521E6ED2E0001CE6C5 /* CreationRetweetViewController.m in Sources */,
 				E4EB944D1E6ED1C3001CE6C5 /* EmptyStateView.m in Sources */,
 				E4176B231E6C5407005A5EBB /* AboutViewController.m in Sources */,
@@ -713,8 +766,11 @@
 				E4176B021E6C50B0005A5EBB /* InitialSetUpViewController.m in Sources */,
 				E4176B2A1E6C8E45005A5EBB /* RaffleTableViewCell.m in Sources */,
 				E4176AFD1E6C5072005A5EBB /* AppUtils.m in Sources */,
+				E438AA501E76000E00A2C15F /* Draw.m in Sources */,
 				E4176B1B1E6C53B4005A5EBB /* HomeViewController.m in Sources */,
+				E438AA581E76037A00A2C15F /* Person.m in Sources */,
 				E4176B2B1E6C8E45005A5EBB /* PersonTableViewCell.m in Sources */,
+				E438AA5C1E7603D200A2C15F /* PersonParser.m in Sources */,
 				E438AA431E75DFE500A2C15F /* AFNetworkingManager.m in Sources */,
 				E4176B2F1E6CEDB0005A5EBB /* RaffleDetailViewController.m in Sources */,
 				E4176B1F1E6C53E1005A5EBB /* RaffleTypeViewController.m in Sources */,

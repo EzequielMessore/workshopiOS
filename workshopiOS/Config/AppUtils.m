@@ -7,6 +7,7 @@
 //
 
 #import "AppUtils.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation AppUtils
 
@@ -24,6 +25,27 @@
 
 +(void) clearUserDefault {
     [AppUtils saveToUserDefault:nil withKey:API_TOKEN];
+}
+
++(void)setupImageWithUrl:(NSString *)imageUrl andPlaceholder:(NSString *)placeholder andImageView:(UIImageView *)imageView {
+    //Recovers imagem from an URL
+    if(imageUrl != nil) {
+        __weak UIImageView *weakImageView = imageView;
+        
+        NSURL *url = [NSURL URLWithString: imageUrl];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        
+        [weakImageView setImageWithURLRequest:request placeholderImage:[UIImage imageNamed:placeholder] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+            [weakImageView setContentMode:UIViewContentModeScaleAspectFill];
+            weakImageView.image = image;
+            weakImageView.layer.masksToBounds = YES;
+            
+        }failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
+#ifdef DEBUG
+            NSLog(@"%@", error);
+#endif
+        }];
+    }
 }
 
 //UIAlertController with ok action

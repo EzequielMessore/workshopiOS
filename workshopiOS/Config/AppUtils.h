@@ -21,5 +21,6 @@
 +(void)setTextFieldLeftImageWithImage:(UIImage *)image andTextField:(UITextField *)textField andPadding:(CGFloat)leftPadding;
 
 +(UIAlertController*)setupAlertWithMessage:(NSString*)message;
++(void)setupImageWithUrl:(NSString *)imageUrl andPlaceholder:(NSString *)placeholder andImageView:(UIImageView *)imageView;
 
 @end

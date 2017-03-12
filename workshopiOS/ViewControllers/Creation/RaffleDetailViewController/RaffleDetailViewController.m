@@ -7,10 +7,15 @@
 //
 
 #import "RaffleDetailViewController.h"
+#import "RaffleManager.h"
 #import "Constants.h"
 #import "AppUtils.h"
 
 @interface RaffleDetailViewController ()
+
+@property (nonatomic) int drawsCount;
+
+@property (strong, nonatomic) NSArray *drawsArray;
 
 @end
 
@@ -22,6 +27,10 @@
     
     //Title
     self.navigationItem.titleView = [AppUtils createTitleLabelWithString:@"Raffle Detail"];
+    
+    //Initializations
+    self.drawsCount = 0;
+    self.drawsArray = [NSArray new];
 
     //Don't forget to register the cell when programatically setting the constraints
     [[self tableView] registerClass:[PersonTableViewCell class] forCellReuseIdentifier:personCellIdentifier];
@@ -29,7 +38,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self fillUpScreen];
+    [self getRaffle];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,6 +62,30 @@
     [self.drawnOnLabel setText:[NSString stringWithFormat:@"drawn on %@", self.currentRaffle.updatedAt]];
 }
 
+-(void)getRaffle {
+    [[RaffleManager sharedInstance]getSpecifiRaffleWithRaffleHash:self.currentRaffle.raffleId andCompletion:^(BOOL isSuccess, Raffle *raffle, NSString *message, NSError *error) {
+        if(isSuccess) {
+            self.currentRaffle = raffle;
+            [self getDrawns];
+        } else {
+            [self.navigationController presentViewController:[AppUtils setupAlertWithMessage:message] animated:YES completion:nil];
+        }
+    }];
+}
+
+-(void)getDrawns {
+    [[RaffleManager sharedInstance]getAllDrawsWithRaffleHash:self.currentRaffle.raffleId andCompletion:^(BOOL isSuccess, NSArray *draws, int count, NSString *message, NSError *error) {
+        if(isSuccess) {
+            self.drawsArray = draws;
+            self.drawsCount = count;
+            [self fillUpScreen];
+            [self.tableView reloadData];
+        } else {
+            [self.navigationController presentViewController:[AppUtils setupAlertWithMessage:message] animated:YES completion:nil];
+        }
+    }];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -68,7 +101,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.drawsCount;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -78,7 +111,9 @@
         cell = [[PersonTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:personCellIdentifier];
     }
     
-    cell = [cell fillUpCellWithPerson:[NSString stringWithFormat:@"Name %lu", (long)indexPath.row+1]];
+    Draw *draw = [self.drawsArray objectAtIndex:indexPath.row];
+    
+    cell = [cell fillUpCellWithPerson:draw.person];
     cell.delegate = self;
     
     MGSwipeButton *button = [MGSwipeButton buttonWithTitle:@"Disquilify" backgroundColor:COLOR_CHARCOAL];

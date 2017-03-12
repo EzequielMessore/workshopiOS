@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MGSwipeTableCell.h"
+#import "Person.h"
 
 static NSString * const personCellIdentifier = @"personCell";
 
@@ -21,6 +22,6 @@ static NSString * const personCellIdentifier = @"personCell";
 
 
 //The parameter will be of type Person after getting content from API
--(PersonTableViewCell *)fillUpCellWithPerson:(NSString *)personName;
+-(PersonTableViewCell *)fillUpCellWithPerson:(Person *)person;
 
 @end
