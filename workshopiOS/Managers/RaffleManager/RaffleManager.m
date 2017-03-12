@@ -25,20 +25,22 @@ static RaffleManager *sharedInstance = nil;
     return sharedInstance;
 }
 
--(void)getRafflesWithCompletion:(void (^) (BOOL isSuccess, NSArray *raffles, NSString *message, NSError *error)) completion {
+-(void)getRafflesWithCompletion:(void (^) (BOOL isSuccess, NSArray *raffles, int count, NSString *message, NSError *error)) completion {
     
-    [self callApiWithParameters:nil andURL:URL_RAFFLE andRequestType:@"GET" andCompletion:^(id response, BOOL isSuccess, NSString *message, NSError *error) {
-        if(isSuccess) {
-            NSArray *responseArray = (NSArray *)response;
+    [self callAPIWithParameters:nil andUrl:URL_RAFFLE andMethodType:@"GET" andCompletion:^(BOOL success, id response, NSString *message, NSError *error) {
+        if(success) {
+            NSDictionary *responseDictionary = (NSDictionary *)[response objectForKey:@"data"];
             NSMutableArray *raffles = [NSMutableArray new];
             
+            int count = [[responseDictionary objectForKey:@"count"] intValue];
+            
             RaffleParser *raffleParser = [RaffleParser new];
-            for (NSDictionary *raffleDictionary in responseArray) {
+            for (NSDictionary *raffleDictionary in [responseDictionary objectForKey:@"list"]) {
                 [raffles addObject:[raffleParser parseToRaffle:raffleDictionary]];
             }
-            completion(YES, raffles, nil, nil);
+            completion(YES, raffles, count, nil, nil);
         } else {
-            completion(NO, nil, message, error);
+            completion(NO, nil, 0, message, error);
         }
     }];
 }

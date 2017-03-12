@@ -8,13 +8,14 @@
 
 #import "HomeViewController.h"
 #import "RaffleDetailViewController.h"
+#import "RaffleManager.h"
 #import "AppUtils.h"
 
 @interface HomeViewController ()
 
+@property (nonatomic) int rafflesCount;
+
 @property (strong, nonatomic) NSArray *rafflesArray;
-@property (strong, nonatomic) NSDictionary *responseDictionary;
-@property (nonatomic, retain) NSData* responseData;
 
 @end
 
@@ -33,12 +34,17 @@
     
     //Initiations
     self.rafflesArray = [NSArray new];
-    self.responseDictionary = [NSDictionary new];
     
     //Empty Sate
     [self.emptyStateView setHidden:YES];
     [self.emptyStateView.message setText:@"Coming Soon!"];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self getRaffles];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,6 +62,28 @@
 }
 */
 
+#pragma mark - Helpers 
+
+-(void)getRaffles {
+    [[RaffleManager sharedInstance]getRafflesWithCompletion:^(BOOL isSuccess, NSArray *raffles, int count, NSString *message, NSError *error) {
+        if(isSuccess) {
+            self.rafflesArray = raffles;
+            self.rafflesCount = count;
+            
+            if(count == 0) {
+                [self.emptyStateView setHidden:NO];
+                [self.emptyStateView.message setText:@"No Raffles Yet :("];
+            } else {
+                [self.emptyStateView setHidden:YES];
+                [self.tableView reloadData];
+            }
+            
+        } else {
+            [self.navigationController presentViewController:[AppUtils setupAlertWithMessage:message] animated:YES completion:nil];
+        }
+    }];
+}
+
 #pragma mark - TableView
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -63,7 +91,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.rafflesCount;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -73,14 +101,16 @@
         cell = [[RaffleTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"raffleCell"];
     }
     
+    Raffle *raffle = [self.rafflesArray objectAtIndex:indexPath.row];
+    
     MGSwipeButton *editButton = [MGSwipeButton buttonWithTitle:@"Copy URL" backgroundColor:COLOR_TULIPE];
     editButton.buttonWidth = 100;
     cell.rightButtons = @[editButton];
     cell.rightSwipeSettings.transition = MGSwipeTransitionDrag;
     cell.delegate = self;
     
-    [cell.raffleNameLabel setText:[NSString stringWithFormat:@"Raffle %lu", (long)indexPath.row]];
-    [cell.raffleUrlLabel setText:[NSString stringWithFormat:@"www.sorteia.eu/sorteio%lu", (long)indexPath.row]];
+    [cell.raffleNameLabel setText:raffle.name];
+    [cell.raffleUrlLabel setText:raffle.url];
     
     return cell;
 }
@@ -92,12 +122,18 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    Raffle *raffle = [self.rafflesArray objectAtIndex:indexPath.row];
+    
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Creation" bundle:nil];
     RaffleDetailViewController *vc = [sb instantiateViewControllerWithIdentifier:@"RaffleDetailVC"];
+    vc.currentRaffle = raffle;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(BOOL) swipeTableCell:(MGSwipeTableCell*) cell tappedButtonAtIndex:(NSInteger) index direction:(MGSwipeDirection)direction fromExpansion:(BOOL) fromExpansion {
+    Raffle *raffleSelected = [self.rafflesArray objectAtIndex:index];
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = raffleSelected.url;
     
     return YES;
 }
@@ -124,9 +160,15 @@
 
 - (IBAction)segmentedControlTouched:(id)sender {
     if(self.segmentedControl.selectedSegmentIndex == 0) {
-        [self.emptyStateView setHidden:YES];
+        if(self.rafflesCount == 0) {
+            [self.emptyStateView setHidden:NO];
+            [self.emptyStateView.message setText:@"No Raffles Yet :("];
+        } else {
+            [self.emptyStateView setHidden:YES];
+        }
     } else {
         [self.emptyStateView setHidden:NO];
+        [self.emptyStateView.message setText:@"Coming Soon!"];
     }
 }
 

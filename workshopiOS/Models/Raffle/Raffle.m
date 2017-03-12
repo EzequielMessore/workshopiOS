@@ -13,15 +13,14 @@
 -(instancetype)init {
     self = [super init];
     
-    self.numberOfWinners = 0;
+    self.drawn = NO;
     
+    self.raffleId = @"";
     self.name = @"";
+    self.type = @"";
+    self.url = @"";
     self.createdAt = @"";
-    self.drawnAt = @"";
-    self.creatorName = @"";
-    
-    self.winners = [NSArray new];
-    self.participants = [NSArray new];
+    self.updatedAt = @"";
     
     return self;
 }

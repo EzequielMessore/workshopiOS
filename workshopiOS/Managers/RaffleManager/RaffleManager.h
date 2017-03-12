@@ -6,13 +6,13 @@
 //  Copyright © 2017 Yasmin Benatti. All rights reserved.
 //
 
-#import "NSURLSessionManager.h"
+//#import "NSURLSessionManager.h"
+#import "AFNetworkingManager.h"
 #import "RaffleParser.h"
 
-@interface RaffleManager : NSURLSessionManager
+@interface RaffleManager : AFNetworkingManager
 
 +(RaffleManager*) sharedInstance;
--(void)getRafflesWithCompletion:(void (^) (BOOL isSuccess, NSArray *raffles, NSString *message, NSError *error)) completion;
--(void)testPostLoginWithParameters:(NSDictionary *)parameters andCompletion:(void (^) (BOOL isSuccess, NSString *message, NSError *error)) completion;
+-(void)getRafflesWithCompletion:(void (^) (BOOL isSuccess, NSArray *raffles, int count, NSString *message, NSError *error)) completion;
 
 @end

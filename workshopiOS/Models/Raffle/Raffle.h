@@ -10,17 +10,13 @@
 
 @interface Raffle : NSObject
 
-@property (nonatomic) int raffleId;
-@property (nonatomic) int numberOfWinners;
+@property (nonatomic) BOOL drawn;
 
+@property (strong, nonatomic) NSString *raffleId;
 @property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) NSString *createdAt;
-@property (strong, nonatomic) NSString *drawnAt;
-@property (strong, nonatomic) NSString *creatorName;
-@property (strong, nonatomic) NSArray *winners;
-@property (strong, nonatomic) NSArray *participants;
-
-
+@property (strong, nonatomic) NSString *updatedAt;
 
 @end
