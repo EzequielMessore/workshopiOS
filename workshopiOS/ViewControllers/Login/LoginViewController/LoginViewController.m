@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "AppUtils.h"
+#import "LoginManager.h"
 
 @interface LoginViewController ()
 
@@ -55,10 +56,16 @@
 #pragma mark - IBActions
 
 - (IBAction)loginButtonTouched:(id)sender {
-    [AppUtils saveToUserDefault:@"asjrq3473947" withKey:API_TOKEN];
+    [[LoginManager sharedInstance]loginWithParameters:nil andCompletion:^(BOOL isSuccess, NSString *message, NSError *error) {
+        if(isSuccess) {
+            //Dismiss is used with presentViewController
+            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            [self.navigationController presentViewController:[AppUtils setupAlertWithMessage:message] animated:YES completion:nil];
+        }
+    }];
     
-    //Dismiss is used with presentViewController 
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 - (IBAction)hideKeyboard:(id)sender {

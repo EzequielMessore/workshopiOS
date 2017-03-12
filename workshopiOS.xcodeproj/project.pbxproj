@@ -30,6 +30,10 @@
 		E4176B2A1E6C8E45005A5EBB /* RaffleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176B261E6C8E45005A5EBB /* RaffleTableViewCell.m */; };
 		E4176B2B1E6C8E45005A5EBB /* PersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176B291E6C8E45005A5EBB /* PersonTableViewCell.m */; };
 		E4176B2F1E6CEDB0005A5EBB /* RaffleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4176B2E1E6CEDB0005A5EBB /* RaffleDetailViewController.m */; };
+		E438AA431E75DFE500A2C15F /* AFNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E438AA3B1E75DFE500A2C15F /* AFNetworkingManager.m */; };
+		E438AA441E75DFE500A2C15F /* NSURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E438AA3F1E75DFE500A2C15F /* NSURLSessionManager.m */; };
+		E438AA451E75DFE500A2C15F /* RaffleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E438AA421E75DFE500A2C15F /* RaffleManager.m */; };
+		E438AA481E75E04800A2C15F /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E438AA471E75E04800A2C15F /* LoginManager.m */; };
 		E4EB94481E6E11C3001CE6C5 /* CreationFollowersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EB94471E6E11C3001CE6C5 /* CreationFollowersViewController.m */; };
 		E4EB944D1E6ED1C3001CE6C5 /* EmptyStateView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EB944B1E6ED1C3001CE6C5 /* EmptyStateView.m */; };
 		E4EB944E1E6ED1C3001CE6C5 /* EmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4EB944C1E6ED1C3001CE6C5 /* EmptyStateView.xib */; };
@@ -100,6 +104,14 @@
 		E4176B291E6C8E45005A5EBB /* PersonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonTableViewCell.m; sourceTree = "<group>"; };
 		E4176B2D1E6CEDB0005A5EBB /* RaffleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaffleDetailViewController.h; sourceTree = "<group>"; };
 		E4176B2E1E6CEDB0005A5EBB /* RaffleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaffleDetailViewController.m; sourceTree = "<group>"; };
+		E438AA3A1E75DFE500A2C15F /* AFNetworkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkingManager.h; sourceTree = "<group>"; };
+		E438AA3B1E75DFE500A2C15F /* AFNetworkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingManager.m; sourceTree = "<group>"; };
+		E438AA3E1E75DFE500A2C15F /* NSURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLSessionManager.h; sourceTree = "<group>"; };
+		E438AA3F1E75DFE500A2C15F /* NSURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLSessionManager.m; sourceTree = "<group>"; };
+		E438AA411E75DFE500A2C15F /* RaffleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaffleManager.h; sourceTree = "<group>"; };
+		E438AA421E75DFE500A2C15F /* RaffleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaffleManager.m; sourceTree = "<group>"; };
+		E438AA461E75E04800A2C15F /* LoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginManager.h; sourceTree = "<group>"; };
+		E438AA471E75E04800A2C15F /* LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginManager.m; sourceTree = "<group>"; };
 		E4EB94461E6E11C3001CE6C5 /* CreationFollowersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreationFollowersViewController.h; sourceTree = "<group>"; };
 		E4EB94471E6E11C3001CE6C5 /* CreationFollowersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreationFollowersViewController.m; sourceTree = "<group>"; };
 		E4EB944A1E6ED1C3001CE6C5 /* EmptyStateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyStateView.h; sourceTree = "<group>"; };
@@ -278,6 +290,10 @@
 		E4176AF71E6C4E40005A5EBB /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				E438AA391E75DFE500A2C15F /* AFNetworkingManager */,
+				E438AA3C1E75DFE500A2C15F /* LoginManager */,
+				E438AA3D1E75DFE500A2C15F /* NSURLSessionManager */,
+				E438AA401E75DFE500A2C15F /* RaffleManager */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -408,6 +424,42 @@
 				E4176B2E1E6CEDB0005A5EBB /* RaffleDetailViewController.m */,
 			);
 			path = RaffleDetailViewController;
+			sourceTree = "<group>";
+		};
+		E438AA391E75DFE500A2C15F /* AFNetworkingManager */ = {
+			isa = PBXGroup;
+			children = (
+				E438AA3A1E75DFE500A2C15F /* AFNetworkingManager.h */,
+				E438AA3B1E75DFE500A2C15F /* AFNetworkingManager.m */,
+			);
+			path = AFNetworkingManager;
+			sourceTree = "<group>";
+		};
+		E438AA3C1E75DFE500A2C15F /* LoginManager */ = {
+			isa = PBXGroup;
+			children = (
+				E438AA461E75E04800A2C15F /* LoginManager.h */,
+				E438AA471E75E04800A2C15F /* LoginManager.m */,
+			);
+			path = LoginManager;
+			sourceTree = "<group>";
+		};
+		E438AA3D1E75DFE500A2C15F /* NSURLSessionManager */ = {
+			isa = PBXGroup;
+			children = (
+				E438AA3E1E75DFE500A2C15F /* NSURLSessionManager.h */,
+				E438AA3F1E75DFE500A2C15F /* NSURLSessionManager.m */,
+			);
+			path = NSURLSessionManager;
+			sourceTree = "<group>";
+		};
+		E438AA401E75DFE500A2C15F /* RaffleManager */ = {
+			isa = PBXGroup;
+			children = (
+				E438AA411E75DFE500A2C15F /* RaffleManager.h */,
+				E438AA421E75DFE500A2C15F /* RaffleManager.m */,
+			);
+			path = RaffleManager;
 			sourceTree = "<group>";
 		};
 		E4EB94451E6E11B1001CE6C5 /* CreationFollowersViewController */ = {
@@ -647,9 +699,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4EB945A1E6ED613001CE6C5 /* RaffleParser.m in Sources */,
+				E438AA451E75DFE500A2C15F /* RaffleManager.m in Sources */,
 				E4EB94521E6ED2E0001CE6C5 /* CreationRetweetViewController.m in Sources */,
 				E4EB944D1E6ED1C3001CE6C5 /* EmptyStateView.m in Sources */,
 				E4176B231E6C5407005A5EBB /* AboutViewController.m in Sources */,
+				E438AA441E75DFE500A2C15F /* NSURLSessionManager.m in Sources */,
+				E438AA481E75E04800A2C15F /* LoginManager.m in Sources */,
 				E4EB94561E6ED606001CE6C5 /* Raffle.m in Sources */,
 				E4176B071E6C50E0005A5EBB /* TabBarViewController.m in Sources */,
 				E4EB94481E6E11C3001CE6C5 /* CreationFollowersViewController.m in Sources */,
@@ -660,6 +715,7 @@
 				E4176AFD1E6C5072005A5EBB /* AppUtils.m in Sources */,
 				E4176B1B1E6C53B4005A5EBB /* HomeViewController.m in Sources */,
 				E4176B2B1E6C8E45005A5EBB /* PersonTableViewCell.m in Sources */,
+				E438AA431E75DFE500A2C15F /* AFNetworkingManager.m in Sources */,
 				E4176B2F1E6CEDB0005A5EBB /* RaffleDetailViewController.m in Sources */,
 				E4176B1F1E6C53E1005A5EBB /* RaffleTypeViewController.m in Sources */,
 				E4176AC01E6B665F005A5EBB /* main.m in Sources */,

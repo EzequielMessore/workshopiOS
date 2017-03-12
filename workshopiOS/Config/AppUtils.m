@@ -26,6 +26,18 @@
     [AppUtils saveToUserDefault:nil withKey:API_TOKEN];
 }
 
+//UIAlertController with ok action
++(UIAlertController*)setupAlertWithMessage:(NSString*)message {
+    UIAlertController *myAlertController = [UIAlertController alertControllerWithTitle:@"Attention" message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [myAlertController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [myAlertController addAction: ok];
+    
+    return myAlertController;
+}
+
 //Title View
 +(UILabel *)createTitleLabelWithString:(NSString *)title {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];

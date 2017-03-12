@@ -6,7 +6,7 @@
 //  Copyright © 2017 Yasmin Benatti. All rights reserved.
 //
 
-#define BASE_URL @"http://dev.ringa.com.br/level-up-api/api/"
+#define BASE_URL @"https://sorteiaeu.flavioheleno.com"
 
-#define URL_TEST    BASE_URL @"posts?uid=5"
-#define URL_TEST_LOGIN BASE_URL @"sessions"
+#define URL_LOGIN    BASE_URL @"/auth"
+#define URL_RAFFLE   BASE_URL @"/raffles"
