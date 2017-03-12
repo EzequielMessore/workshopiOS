@@ -13,6 +13,8 @@
 
 @interface CreationFollowersViewController ()
 
+@property (strong, nonatomic) Raffle *createdRaffle;
+
 @end
 
 @implementation CreationFollowersViewController
@@ -38,6 +40,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"raffleDetailSegue"]) {
         RaffleDetailViewController *vc = [segue destinationViewController];
+        vc.currentRaffle = self.createdRaffle;
         vc.hidesBottomBarWhenPushed = YES;
     }
 }
@@ -64,9 +67,19 @@
     NSDictionary *creationParameters = @{@"type" : TYPE_FOLLOWER,
                                          @"name" : self.raffleNameTextField.text};
     
+    NSDictionary *drawnParameters = @{@"winners" : self.numberOfWinnersTextField.text};
+    
     [[RaffleManager sharedInstance]createRaffleWithParameters:creationParameters andCompletion:^(BOOL isSuccess, Raffle *raffle, NSString *message, NSError *error) {
         if(isSuccess) {
-            [self performSegueWithIdentifier:@"raffleDetailSegue" sender:nil];
+            self.createdRaffle = raffle;
+            
+            [[RaffleManager sharedInstance]drawRaffleWithParameters:drawnParameters andRaffleHas:self.createdRaffle.raffleId andCompletion:^(BOOL isSuccess, NSString *message, NSError *error) {
+                if(isSuccess) {
+                    [self performSegueWithIdentifier:@"raffleDetailSegue" sender:self.createdRaffle];
+                } else {
+                    [self.navigationController presentViewController:[AppUtils setupAlertWithMessage:message] animated:YES completion:nil];
+                }
+            }];
         } else {
             [self.navigationController presentViewController:[AppUtils setupAlertWithMessage:message] animated:YES completion:nil];
         }

@@ -62,4 +62,17 @@ static RaffleManager *sharedInstance = nil;
     }];
 }
 
+-(void)drawRaffleWithParameters:(NSDictionary *)parameters andRaffleHas:(NSString *)raffleHash andCompletion:(void (^) (BOOL isSuccess, NSString *message, NSError *error)) completion {
+    
+    NSString *url = [NSString stringWithFormat:@"%@/%@/draws", URL_RAFFLE, raffleHash];
+    
+    [self callAPIWithParameters:parameters andUrl:url andMethodType:@"POST" andCompletion:^(BOOL success, id response, NSString *message, NSError *error) {
+        if(success) {
+            completion(YES, nil, nil);
+        } else {
+            completion(NO, message, error);
+        }
+    }];
+}
+
 @end
