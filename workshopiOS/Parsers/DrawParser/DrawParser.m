@@ -15,7 +15,7 @@
     Draw *draw = [Draw new];
     
     if([drawToParse objectForKey:@"id"]) {
-        draw.personId = [[drawToParse objectForKey:@"id"] intValue];
+        draw.drawId = [[drawToParse objectForKey:@"id"] intValue];
     }
     
     if([drawToParse objectForKey:@"disqualified"]) {

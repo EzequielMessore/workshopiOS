@@ -15,7 +15,7 @@
 
 @property (nonatomic) int drawsCount;
 
-@property (strong, nonatomic) NSArray *drawsArray;
+@property (strong, nonatomic) NSMutableArray *drawsArray;
 
 @end
 
@@ -30,7 +30,7 @@
     
     //Initializations
     self.drawsCount = 0;
-    self.drawsArray = [NSArray new];
+    self.drawsArray = [NSMutableArray new];
 
     //Don't forget to register the cell when programatically setting the constraints
     [[self tableView] registerClass:[PersonTableViewCell class] forCellReuseIdentifier:personCellIdentifier];
@@ -76,7 +76,7 @@
 -(void)getDrawns {
     [[RaffleManager sharedInstance]getAllDrawsWithRaffleHash:self.currentRaffle.raffleId andCompletion:^(BOOL isSuccess, NSArray *draws, int count, NSString *message, NSError *error) {
         if(isSuccess) {
-            self.drawsArray = draws;
+            [self.drawsArray addObjectsFromArray:draws];
             self.drawsCount = count;
             [self fillUpScreen];
             [self.tableView reloadData];
@@ -143,6 +143,16 @@
 }
 
 -(BOOL) swipeTableCell:(MGSwipeTableCell*) cell tappedButtonAtIndex:(NSInteger) index direction:(MGSwipeDirection)direction fromExpansion:(BOOL) fromExpansion {
+    
+    Draw *draw = [self.drawsArray objectAtIndex:index];
+    
+    [[RaffleManager sharedInstance]disquilifyDraw:draw.drawId andRaffleHash:self.currentRaffle.raffleId andReason:@"Cause I can :D" andCompletion:^(BOOL isSuccess, NSString *message, NSError *error) {
+        if(isSuccess) {
+            [self getDrawns];
+        } else {
+            [self.navigationController presentViewController:[AppUtils setupAlertWithMessage:message] animated:YES completion:nil];
+        }
+    }];
     
     return YES;
 }

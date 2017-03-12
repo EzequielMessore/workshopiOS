@@ -57,6 +57,16 @@ static AFHTTPSessionManager *manager = nil;
             NSDictionary *errorDictionary = error.userInfo;
             completion(NO, nil, [errorDictionary objectForKey:@"NSLocalizedDescription"], error);
         }];
+        
+    } else if([methodType isEqualToString:@"PUT"]) {
+        [manager PUT:url parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@"success!");
+            completion(YES, responseObject, nil, nil);
+
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSDictionary *errorDictionary = error.userInfo;
+            completion(NO, nil, [errorDictionary objectForKey:@"NSLocalizedDescription"], error);
+        }];
     }
 }
 

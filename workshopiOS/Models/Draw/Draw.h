@@ -13,7 +13,7 @@
 
 @property (nonatomic) BOOL disqualified;
 
-@property (nonatomic) int personId;
+@property (nonatomic) int drawId;
 
 @property (strong, nonatomic) NSString *disqualifiedReason;
 @property (strong, nonatomic) NSString *createdAt;

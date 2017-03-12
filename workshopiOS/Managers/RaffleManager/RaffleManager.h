@@ -19,5 +19,6 @@
 -(void)drawRaffleWithParameters:(NSDictionary *)parameters andRaffleHas:(NSString *)raffleHash andCompletion:(void (^) (BOOL isSuccess, NSString *message, NSError *error)) completion;
 -(void)getSpecifiRaffleWithRaffleHash:(NSString *)raffleHash andCompletion:(void (^) (BOOL isSuccess, Raffle *raffle, NSString *message, NSError *error)) completion;
 -(void)getAllDrawsWithRaffleHash:(NSString *)raffleHash andCompletion:(void (^) (BOOL isSuccess, NSArray *draws, int count, NSString *message, NSError *error)) completion;
+-(void)disquilifyDraw:(int)drawId andRaffleHash:(NSString *)raffleHash andReason:(NSString *)reason andCompletion:(void (^) (BOOL isSuccess, NSString *message, NSError *error)) completion;
 
 @end
