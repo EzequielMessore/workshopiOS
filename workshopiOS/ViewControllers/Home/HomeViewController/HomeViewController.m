@@ -65,7 +65,9 @@
 #pragma mark - Helpers 
 
 -(void)getRaffles {
+    [AppUtils startLoadingInView:self.view];
     [[RaffleManager sharedInstance]getRafflesWithCompletion:^(BOOL isSuccess, NSArray *raffles, int count, NSString *message, NSError *error) {
+        [AppUtils stopLoadingInView:self.view];
         if(isSuccess) {
             self.rafflesArray = raffles;
             self.rafflesCount = count;
@@ -110,7 +112,7 @@
     cell.delegate = self;
     
     [cell.raffleNameLabel setText:raffle.name];
-    [cell.raffleUrlLabel setText:raffle.url];
+    [cell.raffleUrlLabel setText:[NSString stringWithFormat:@"https://sorteiaeu.flavioheleno.com/raffles/%@", raffle.raffleId]];
     
     [cell.raffleCreatedLabel setText:[NSString stringWithFormat:@"created %d min ago", [AppUtils timeSince:raffle.createdAt]]];
     

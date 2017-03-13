@@ -21,6 +21,7 @@
 #define COLOR_ISABELLINE [UIColor colorWithRed:237.0/255.0f green:237.0/255.0f blue:237.0/255.0f alpha:1]
 #define COLOR_TULIPE [UIColor colorWithRed:250.0/255.0f green:124.0/255.0f blue:146.0/255.0f alpha:1]
 #define COLOR_CHARCOAL_20 [UIColor colorWithRed:50.0/255.0f green:70.0/255.0f blue:82.0/255.0f alpha:0.2]
+#define COLOR_WHITE [UIColor colorWithRed:255.0/255.0f green:255.0/255.0f blue:255.0/255.0f alpha:1]
 
 #define API_TOKEN @"api_token"
 #define TYPE_FOLLOWER @"follower"

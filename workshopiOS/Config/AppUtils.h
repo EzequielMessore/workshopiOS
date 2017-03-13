@@ -24,5 +24,7 @@
 +(void)setupImageWithUrl:(NSString *)imageUrl andPlaceholder:(NSString *)placeholder andImageView:(UIImageView *)imageView;
 + (NSString *)formatDateWithTime:(NSString *)date;
 +(int)timeSince:(NSString *)raffleDateString;
++(void)startLoadingInView:(UIView*)view;
++(void)stopLoadingInView:(UIView*)view;
 
 @end

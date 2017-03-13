@@ -51,17 +51,6 @@
     [self.numberOfWinnersTextField resignFirstResponder];
 }
 
-- (IBAction)testButtonTouched:(id)sender {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Raffle Test" message:@"Fulano was drawn! Congratulations! :D \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn! \n Ciclano was drawn!" preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        [alertController dismissViewControllerAnimated:YES completion:nil];
-    }];
-    [alertController addAction: ok];
-    
-    [self.navigationController presentViewController:alertController animated:YES completion:nil];
-}
-
 - (IBAction)drawButtonTouched:(id)sender {
     
     NSDictionary *creationParameters = @{@"type" : TYPE_FOLLOWER,
@@ -69,11 +58,15 @@
     
     NSDictionary *drawnParameters = @{@"winners" : self.numberOfWinnersTextField.text};
     
+    [AppUtils startLoadingInView:self.view];
     [[RaffleManager sharedInstance]createRaffleWithParameters:creationParameters andCompletion:^(BOOL isSuccess, Raffle *raffle, NSString *message, NSError *error) {
         if(isSuccess) {
+            [AppUtils stopLoadingInView:self.view];
             self.createdRaffle = raffle;
             
+            [AppUtils startLoadingInView:self.view];
             [[RaffleManager sharedInstance]drawRaffleWithParameters:drawnParameters andRaffleHas:self.createdRaffle.raffleId andCompletion:^(BOOL isSuccess, NSString *message, NSError *error) {
+                [AppUtils stopLoadingInView:self.view];
                 if(isSuccess) {
                     [self performSegueWithIdentifier:@"raffleDetailSegue" sender:self.createdRaffle];
                 } else {

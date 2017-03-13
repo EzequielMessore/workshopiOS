@@ -56,7 +56,9 @@
 #pragma mark - IBActions
 
 - (IBAction)loginButtonTouched:(id)sender {
+    [AppUtils startLoadingInView:self.view];
     [[LoginManager sharedInstance]loginWithParameters:nil andCompletion:^(BOOL isSuccess, NSString *message, NSError *error) {
+        [AppUtils stopLoadingInView:self.view];
         if(isSuccess) {
             //Dismiss is used with presentViewController
             [self.navigationController dismissViewControllerAnimated:YES completion:nil];

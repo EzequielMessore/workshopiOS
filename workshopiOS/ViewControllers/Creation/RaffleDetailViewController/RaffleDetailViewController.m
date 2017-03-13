@@ -62,7 +62,9 @@
 }
 
 -(void)getRaffle {
+    [AppUtils startLoadingInView:self.view];
     [[RaffleManager sharedInstance]getSpecifiRaffleWithRaffleHash:self.currentRaffle.raffleId andCompletion:^(BOOL isSuccess, Raffle *raffle, NSString *message, NSError *error) {
+        [AppUtils stopLoadingInView:self.view];
         if(isSuccess) {
             self.currentRaffle = raffle;
             [self getDrawns];
@@ -73,7 +75,9 @@
 }
 
 -(void)getDrawns {
+    [AppUtils startLoadingInView:self.view];
     [[RaffleManager sharedInstance]getAllDrawsWithRaffleHash:self.currentRaffle.raffleId andCompletion:^(BOOL isSuccess, NSArray *draws, int count, NSString *message, NSError *error) {
+        [AppUtils stopLoadingInView:self.view];
         if(isSuccess) {
             [self.drawsArray removeAllObjects];
             [self.drawsArray addObjectsFromArray:draws];
@@ -122,6 +126,8 @@
         [cell setUserInteractionEnabled:NO];
         [cell.disquilifiedLabel setHidden:NO];
     } else {
+        [cell setBackgroundColor:COLOR_WHITE];
+
         MGSwipeButton *button = [MGSwipeButton buttonWithTitle:@"Disquilify" backgroundColor:COLOR_CHARCOAL];
         button.buttonWidth = 100;
         cell.rightButtons = @[button];
