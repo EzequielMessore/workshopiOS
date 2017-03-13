@@ -24,7 +24,6 @@ static NSString * const personCellIdentifier = @"personCell";
 @property (strong, nonatomic) UIView *separatorView;
 
 
-//The parameter will be of type Person after getting content from API
 -(PersonTableViewCell *)fillUpCellWithPerson:(Person *)person;
 
 @end

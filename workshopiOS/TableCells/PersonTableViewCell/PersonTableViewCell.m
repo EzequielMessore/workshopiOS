@@ -132,16 +132,19 @@
     [self.disquilifiedLabel setNumberOfLines:1];
     [self.contentView addSubview:self.disquilifiedLabel];
     
+    //Top to name label
     NSLayoutConstraint *disquilifiedLabelTopConstraint = [NSLayoutConstraint
                                                       constraintWithItem:self.disquilifiedLabel attribute:NSLayoutAttributeTop
                                                       relatedBy:NSLayoutRelationEqual toItem:self.personNameLabel
                                                       attribute:NSLayoutAttributeBottom multiplier:1.0 constant:2.0f];
     
+    //Trailing to content view
     NSLayoutConstraint *disquilifiedLabelTrailingConstraint = [NSLayoutConstraint
                                                        constraintWithItem:self.disquilifiedLabel attribute:NSLayoutAttributeTrailing
                                                        relatedBy:NSLayoutRelationEqual toItem:self.contentView
                                                        attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-16.0f];
     
+    //Leading same as person name label
     NSLayoutConstraint *disquilifiedLabelLeadingConstraint = [NSLayoutConstraint
                                                       constraintWithItem:self.disquilifiedLabel attribute:NSLayoutAttributeLeading
                                                       relatedBy:NSLayoutRelationEqual toItem:self.personNameLabel
@@ -153,6 +156,7 @@
 }
 
 -(void)setUpSeparatorView {
+    //View on bottom of cell
     self.separatorView = [UIView new];
     self.separatorView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.separatorView setBackgroundColor:COLOR_CHARCOAL_20];

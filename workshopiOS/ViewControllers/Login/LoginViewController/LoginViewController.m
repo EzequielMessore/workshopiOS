@@ -25,6 +25,7 @@
     self.navigationController.navigationBar.hidden = YES;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
+    //Puts an image on the left side of the text field
     [AppUtils setTextFieldLeftImageWithImage:[UIImage imageNamed:@"ic_lock_white_48pt"] andTextField:self.emailTextField andPadding:5.0];
     [AppUtils setTextFieldLeftImageWithImage:[UIImage imageNamed:@"ic_email_white_48pt"] andTextField:self.passwordTextField andPadding:5.0];
     
@@ -70,6 +71,7 @@
     
 }
 
+//Method called when clicking anywhere in the view
 - (IBAction)hideKeyboard:(id)sender {
     //There are two ways to close keyboard
     

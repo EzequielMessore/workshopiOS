@@ -30,10 +30,7 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    //1. Here, you can test if the user is authorized to use the app
-    
-//    [AppUtils saveToUserDefault:@"token" withKey:API_TOKEN];
-    
+    //Here you can test if the user is authorized to use the app
     if(![AppUtils retrieveFromUserDefaultWithKey:API_TOKEN]) {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
         LoginViewController *vc = [sb instantiateInitialViewController];

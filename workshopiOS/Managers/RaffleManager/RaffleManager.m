@@ -15,8 +15,8 @@
 static RaffleManager *sharedInstance = nil;
 
 /*!
- * @discussion Configura um singleton do RaffleManager
- * @return instancia do RaffleManager responsável por todas as chamadas a métodos dessa classe.
+ * @discussion Setup a singleton of RaffleManager
+ * @return this instance will make all the HTTP calls.
  */
 + (RaffleManager*)sharedInstance {
     if(sharedInstance == nil) {

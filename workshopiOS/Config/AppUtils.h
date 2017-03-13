@@ -21,10 +21,13 @@
 +(void)setTextFieldLeftImageWithImage:(UIImage *)image andTextField:(UITextField *)textField andPadding:(CGFloat)leftPadding;
 
 +(UIAlertController*)setupAlertWithMessage:(NSString*)message;
-+(void)setupImageWithUrl:(NSString *)imageUrl andPlaceholder:(NSString *)placeholder andImageView:(UIImageView *)imageView;
-+ (NSString *)formatDateWithTime:(NSString *)date;
-+(int)timeSince:(NSString *)raffleDateString;
 +(void)startLoadingInView:(UIView*)view;
 +(void)stopLoadingInView:(UIView*)view;
+
++(void)setupImageWithUrl:(NSString *)imageUrl andPlaceholder:(NSString *)placeholder andImageView:(UIImageView *)imageView;
+
++ (NSString *)formatDateWithTime:(NSString *)date;
++(int)timeSince:(NSString *)raffleDateString;
+
 
 @end

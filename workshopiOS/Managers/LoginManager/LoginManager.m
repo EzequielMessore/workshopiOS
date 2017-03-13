@@ -15,8 +15,8 @@
 static LoginManager *sharedInstance = nil;
 
 /*!
- * @discussion Configura um singleton do LoginManager
- * @return instância do LoginManager, responsável por todas as chamadas a métodos dessa classe.
+ * @discussion Setup a singleton of LoginManager
+ * @return this instance will make all the HTTP calls.
  */
 + (LoginManager*)sharedInstance {
     if(sharedInstance == nil) {

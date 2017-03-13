@@ -6,7 +6,6 @@
 //  Copyright © 2017 Yasmin Benatti. All rights reserved.
 //
 
-#define API_TOKEN @"api_token"
 
 #define COLOR_BLUE [UIColor colorWithRed:120.0/255.0f green:163.0/255.0f blue:232.0/255.0f alpha:1]
 #define COLOR_VIVID_CERULEAN [UIColor colorWithRed:0.0/255.0f green:166.0/255.0f blue:251.0/255.0f alpha:1]

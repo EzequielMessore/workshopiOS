@@ -62,7 +62,7 @@
 #pragma mark - Setting methods
 
 -(void)setEmptyStateMessageWithString:(NSString *)message {
-    self.message = message;
+    [self.message setText:message];
 }
 
 @end

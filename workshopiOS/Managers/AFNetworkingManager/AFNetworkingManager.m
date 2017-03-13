@@ -17,8 +17,8 @@ static AFNetworkingManager *sharedInstance = nil;
 static AFHTTPSessionManager *manager = nil;
 
 /*!
- * @discussion Configura um singleton do AFNetworkingManager
- * @return instancia do AFNetworkingManager responsável por todas as chamadas a métodos dessa classe.
+ * @discussion Setup a singleton of AFNetworkingManager
+ * @return this instance will make all the HTTP calls.
  */
 + (AFNetworkingManager*)sharedInstance {
     if(sharedInstance == nil) {
@@ -34,13 +34,14 @@ static AFHTTPSessionManager *manager = nil;
 
 -(void)callAPIWithParameters:(NSDictionary *)parameters andUrl:(NSString *)url andMethodType:(NSString *)methodType andCompletion:(void(^) (BOOL success, id response, NSString *message, NSError *error)) completion {
     
+    //Checks if there's a token to add to header
     if([AppUtils retrieveFromUserDefaultWithKey:API_TOKEN]) {
         [manager.requestSerializer setValue:[NSString stringWithFormat:@"Token %@", [AppUtils retrieveFromUserDefaultWithKey:API_TOKEN]] forHTTPHeaderField:@"Authorization"];
     }
     
+    //Chooses method type
     if([methodType isEqualToString:@"GET"]) {
         [manager GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            NSLog(@"success!");
             completion(YES, responseObject, nil, nil);
 
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -50,7 +51,6 @@ static AFHTTPSessionManager *manager = nil;
         
     } else if([methodType isEqualToString:@"POST"]) {
         [manager POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            NSLog(@"success!");
             completion(YES, responseObject, nil, nil);
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             NSDictionary *errorDictionary = error.userInfo;
@@ -59,7 +59,6 @@ static AFHTTPSessionManager *manager = nil;
         
     } else if([methodType isEqualToString:@"PUT"]) {
         [manager PUT:url parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            NSLog(@"success!");
             completion(YES, responseObject, nil, nil);
 
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

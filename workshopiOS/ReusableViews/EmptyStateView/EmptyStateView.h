@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-IB_DESIGNABLE //Reusable Views loaded from a xib file
+IB_DESIGNABLE //Reusable Views loaded from a xib file, you can see them on storyboard
 
 @interface EmptyStateView : UIView
 
