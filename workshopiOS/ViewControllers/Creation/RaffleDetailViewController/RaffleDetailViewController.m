@@ -58,8 +58,7 @@
     }
     
     [self.raffleNameLabel setText:self.currentRaffle.name];
-    [self.createdOnLabel setText:[NSString stringWithFormat:@"created on %@", self.currentRaffle.createdAt]];
-    [self.drawnOnLabel setText:[NSString stringWithFormat:@"drawn on %@", self.currentRaffle.updatedAt]];
+    [self.createdOnLabel setText:[NSString stringWithFormat:@"created on %@", [AppUtils formatDateWithTime:self.currentRaffle.createdAt]]];
 }
 
 -(void)getRaffle {
@@ -76,6 +75,7 @@
 -(void)getDrawns {
     [[RaffleManager sharedInstance]getAllDrawsWithRaffleHash:self.currentRaffle.raffleId andCompletion:^(BOOL isSuccess, NSArray *draws, int count, NSString *message, NSError *error) {
         if(isSuccess) {
+            [self.drawsArray removeAllObjects];
             [self.drawsArray addObjectsFromArray:draws];
             self.drawsCount = count;
             [self fillUpScreen];
@@ -115,12 +115,22 @@
     
     cell = [cell fillUpCellWithPerson:draw.person];
     cell.delegate = self;
+    cell.indexPath = indexPath;
     
-    MGSwipeButton *button = [MGSwipeButton buttonWithTitle:@"Disquilify" backgroundColor:COLOR_CHARCOAL];
-    button.buttonWidth = 100;
-    cell.rightButtons = @[button];
-    cell.rightSwipeSettings.transition = MGSwipeTransitionDrag;
-        
+    if(draw.disqualified) {
+        [cell setBackgroundColor:COLOR_ISABELLINE];
+        [cell setUserInteractionEnabled:NO];
+        [cell.disquilifiedLabel setHidden:NO];
+    } else {
+        MGSwipeButton *button = [MGSwipeButton buttonWithTitle:@"Disquilify" backgroundColor:COLOR_CHARCOAL];
+        button.buttonWidth = 100;
+        cell.rightButtons = @[button];
+        cell.rightSwipeSettings.transition = MGSwipeTransitionDrag;
+
+        [cell setUserInteractionEnabled:YES];
+        [cell.disquilifiedLabel setHidden:YES];
+    }
+    
     return cell;
 }
 
@@ -143,8 +153,8 @@
 }
 
 -(BOOL) swipeTableCell:(MGSwipeTableCell*) cell tappedButtonAtIndex:(NSInteger) index direction:(MGSwipeDirection)direction fromExpansion:(BOOL) fromExpansion {
-    
-    Draw *draw = [self.drawsArray objectAtIndex:index];
+    PersonTableViewCell *personCell = (PersonTableViewCell *)cell;
+    Draw *draw = [self.drawsArray objectAtIndex:personCell.indexPath.row];
     
     [[RaffleManager sharedInstance]disquilifyDraw:draw.drawId andRaffleHash:self.currentRaffle.raffleId andReason:@"Cause I can :D" andCompletion:^(BOOL isSuccess, NSString *message, NSError *error) {
         if(isSuccess) {

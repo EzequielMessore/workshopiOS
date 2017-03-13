@@ -30,6 +30,7 @@
         
         [self setUpPersonImageView];
         [self setUpNameLabel];
+        [self setUpDisquilifiedLabel];
         [self setUpSeparatorView];
     }
     
@@ -120,6 +121,35 @@
                                                       attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:8.0f];
     
     [self.contentView addConstraints:@[nameLabelCenterYConstraint, nameLabelTrailingConstraint, nameLabelLeadingConstraint]];
+}
+
+-(void)setUpDisquilifiedLabel {
+    self.disquilifiedLabel = [UILabel new];
+    self.disquilifiedLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.disquilifiedLabel setBackgroundColor:[UIColor clearColor]];
+    [self.disquilifiedLabel setFont:[UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:9.0f]];
+    [self.disquilifiedLabel setTextColor:COLOR_ORIOLES_ORANGE];
+    [self.disquilifiedLabel setNumberOfLines:1];
+    [self.contentView addSubview:self.disquilifiedLabel];
+    
+    NSLayoutConstraint *disquilifiedLabelTopConstraint = [NSLayoutConstraint
+                                                      constraintWithItem:self.disquilifiedLabel attribute:NSLayoutAttributeTop
+                                                      relatedBy:NSLayoutRelationEqual toItem:self.personNameLabel
+                                                      attribute:NSLayoutAttributeBottom multiplier:1.0 constant:2.0f];
+    
+    NSLayoutConstraint *disquilifiedLabelTrailingConstraint = [NSLayoutConstraint
+                                                       constraintWithItem:self.disquilifiedLabel attribute:NSLayoutAttributeTrailing
+                                                       relatedBy:NSLayoutRelationEqual toItem:self.contentView
+                                                       attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-16.0f];
+    
+    NSLayoutConstraint *disquilifiedLabelLeadingConstraint = [NSLayoutConstraint
+                                                      constraintWithItem:self.disquilifiedLabel attribute:NSLayoutAttributeLeading
+                                                      relatedBy:NSLayoutRelationEqual toItem:self.personNameLabel
+                                                      attribute:NSLayoutAttributeLeading multiplier:1.0 constant:0.0f];
+    
+    [self.contentView addConstraints:@[disquilifiedLabelTopConstraint, disquilifiedLabelTrailingConstraint, disquilifiedLabelLeadingConstraint]];
+    
+    [self.disquilifiedLabel setText:@"Disquilified"];
 }
 
 -(void)setUpSeparatorView {

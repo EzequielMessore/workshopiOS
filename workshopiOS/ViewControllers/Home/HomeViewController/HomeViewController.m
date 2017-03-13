@@ -112,14 +112,7 @@
     [cell.raffleNameLabel setText:raffle.name];
     [cell.raffleUrlLabel setText:raffle.url];
     
-    NSDate *today = [NSDate date];
-    NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss a"];
-    NSDate *raffleDate = [NSDate new];
-    raffleDate = [dateFormatter dateFromString:raffle.createdAt];
-    NSTimeInterval passedTime = [raffleDate timeIntervalSinceDate:today];
-    
-    [cell.raffleCreatedLabel setText:[NSString stringWithFormat:@"created %0.0f min ago", passedTime]];
+    [cell.raffleCreatedLabel setText:[NSString stringWithFormat:@"created %d min ago", [AppUtils timeSince:raffle.createdAt]]];
     
     return cell;
 }

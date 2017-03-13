@@ -103,7 +103,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ht1-W6-HVR">
-                                <rect key="frame" x="10" y="74" width="355" height="109"/>
+                                <rect key="frame" x="10" y="74" width="355" height="92"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Raffle Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDD-m6-DiP">
                                         <rect key="frame" x="26" y="10" width="303" height="27"/>
@@ -117,25 +117,15 @@
                                         <color key="textColor" red="0.21176470589999999" green="0.27450980390000002" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="drawn on Feb 19th, 2017" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kps-Hk-JCb">
-                                        <rect key="frame" x="10" y="78" width="335" height="21"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="17"/>
-                                        <color key="textColor" red="0.21176470589999999" green="0.27450980390000002" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.48627450979999998" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Kps-Hk-JCb" secondAttribute="bottom" constant="10" id="9EL-jP-xUS"/>
-                                    <constraint firstAttribute="trailing" secondItem="Kps-Hk-JCb" secondAttribute="trailing" constant="10" id="Ge1-Z8-TWQ"/>
                                     <constraint firstItem="mDD-m6-DiP" firstAttribute="leading" secondItem="ht1-W6-HVR" secondAttribute="leading" constant="26" id="NaU-7f-nBg"/>
-                                    <constraint firstItem="Kps-Hk-JCb" firstAttribute="top" secondItem="3zw-gf-0mp" secondAttribute="bottom" constant="10" id="PUx-da-538"/>
+                                    <constraint firstAttribute="bottom" secondItem="3zw-gf-0mp" secondAttribute="bottom" constant="24" id="OZ5-Hh-8hA"/>
                                     <constraint firstAttribute="trailing" secondItem="mDD-m6-DiP" secondAttribute="trailing" constant="26" id="RFO-uL-vLg"/>
                                     <constraint firstItem="mDD-m6-DiP" firstAttribute="top" secondItem="ht1-W6-HVR" secondAttribute="top" constant="10" id="Uqj-fD-Q8w"/>
                                     <constraint firstItem="3zw-gf-0mp" firstAttribute="top" secondItem="mDD-m6-DiP" secondAttribute="bottom" constant="10" id="ccV-ko-o6o"/>
-                                    <constraint firstItem="Kps-Hk-JCb" firstAttribute="leading" secondItem="ht1-W6-HVR" secondAttribute="leading" constant="10" id="gcu-Vn-Lym"/>
                                     <constraint firstItem="3zw-gf-0mp" firstAttribute="leading" secondItem="ht1-W6-HVR" secondAttribute="leading" constant="10" id="haW-VM-czg"/>
-                                    <constraint firstAttribute="bottom" secondItem="Kps-Hk-JCb" secondAttribute="bottom" priority="250" constant="10" id="usl-Gc-WGc"/>
                                     <constraint firstAttribute="trailing" secondItem="3zw-gf-0mp" secondAttribute="trailing" constant="10" id="vsJ-Lf-24Q"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -145,7 +135,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cTn-i7-Ina">
-                                <rect key="frame" x="0.0" y="193" width="375" height="474"/>
+                                <rect key="frame" x="0.0" y="176" width="375" height="491"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -167,7 +157,6 @@
                     </view>
                     <connections>
                         <outlet property="createdOnLabel" destination="3zw-gf-0mp" id="oMa-Ma-eDE"/>
-                        <outlet property="drawnOnLabel" destination="Kps-Hk-JCb" id="tcx-ii-DHv"/>
                         <outlet property="raffleNameLabel" destination="mDD-m6-DiP" id="VBD-yr-zPq"/>
                         <outlet property="tableView" destination="cTn-i7-Ina" id="2Jh-Tm-2XZ"/>
                     </connections>

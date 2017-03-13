@@ -16,8 +16,11 @@ static NSString * const personCellIdentifier = @"personCell";
     NSString *reuseID;
 }
 
+@property (strong, nonatomic) NSIndexPath *indexPath;
+
 @property (strong, nonatomic) UIImageView *personImageView;
 @property (strong, nonatomic) UILabel *personNameLabel;
+@property (strong, nonatomic) UILabel *disquilifiedLabel;
 @property (strong, nonatomic) UIView *separatorView;
 
 

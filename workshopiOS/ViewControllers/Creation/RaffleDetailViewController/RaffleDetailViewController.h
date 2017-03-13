@@ -17,7 +17,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *raffleNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *createdOnLabel;
-@property (weak, nonatomic) IBOutlet UILabel *drawnOnLabel;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

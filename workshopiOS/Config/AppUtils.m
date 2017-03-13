@@ -41,11 +41,44 @@
             weakImageView.layer.masksToBounds = YES;
             
         }failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
-#ifdef DEBUG
             NSLog(@"%@", error);
-#endif
         }];
     }
+}
+
++ (NSString *)formatDateWithTime:(NSString *)date {
+    
+    NSString *year = [date substringWithRange:NSMakeRange(0, 4)];
+    NSString *month = [date substringWithRange:NSMakeRange(5, 2)];
+    NSString *day = [date substringWithRange:NSMakeRange(8, 2)];
+    
+    NSDateFormatter *formate = [NSDateFormatter new];
+    NSArray *monthNames = [formate standaloneMonthSymbols];
+    NSString *monthName = [[monthNames objectAtIndex:([month intValue] - 1)] substringWithRange:NSMakeRange(0, 3)];
+    
+    NSString *time = [date substringWithRange:NSMakeRange(11, 5)];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"HH:mm";
+    NSDate *dateTF = [dateFormatter dateFromString:time];
+    
+    dateFormatter.dateFormat = @"hh:mm a";
+    NSString *pmamDateString = [dateFormatter stringFromDate:dateTF];
+    
+    return [NSString stringWithFormat:@"%@ %@, %@ %@", monthName, day, year, pmamDateString];
+}
+
++(int)timeSince:(NSString *)raffleDateString {
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss ZZZ"];
+    
+    NSDate *raffleDate = [NSDate new];
+    raffleDate = [dateFormatter dateFromString:raffleDateString];
+    NSTimeInterval passedTime = [today timeIntervalSinceDate:raffleDate];
+    int minutesBetweenDates = passedTime / 60;
+    
+    return minutesBetweenDates;
 }
 
 //UIAlertController with ok action
