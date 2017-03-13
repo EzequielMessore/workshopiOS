@@ -87,9 +87,9 @@
 
 //UIAlertController with one dismiss
 +(UIAlertController*)setupAlertWithMessage:(NSString*)message {
-    UIAlertController *myAlertController = [UIAlertController alertControllerWithTitle:@"Attention" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *myAlertController = [UIAlertController alertControllerWithTitle:@"Message For You!" message:message preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"Got it" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         [myAlertController dismissViewControllerAnimated:YES completion:nil];
     }];
     [myAlertController addAction: ok];

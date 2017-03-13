@@ -24,9 +24,26 @@
     self.navigationItem.titleView = [AppUtils createTitleLabelWithString:@"Raffle Type"];
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showMessageFromNotification:) name:@"retweetNotification" object:nil];
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"retweetNotification" object:nil];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Helpers
+
+-(void)showMessageFromNotification:(NSNotification *)notification {
+    NSString *message = (NSString *)notification.object;
+    [self.navigationController presentViewController:[AppUtils setupAlertWithMessage:message] animated:YES completion:nil];
 }
 
 #pragma mark - Navigation

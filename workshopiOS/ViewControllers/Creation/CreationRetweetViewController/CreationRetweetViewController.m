@@ -29,7 +29,8 @@
 
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.delegate triedToCreateRetweetRaffleWithMessage:@"Sorry, this feature is not available right now :("];
+//    [self.delegate triedToCreateRetweetRaffleWithMessage:@"Sorry, this feature is not available right now :("];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"retweetNotification" object:@"Sorry, this feature is not available right now :("];
 }
 
 - (void)didReceiveMemoryWarning {
