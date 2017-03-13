@@ -58,7 +58,7 @@
 }
 
 - (IBAction)githubImageViewTapped:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/yabenatti/workshopObjC"] options:@{} completionHandler:nil];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/yabenatti/workshopiOS"] options:@{} completionHandler:nil];
 }
 
 -(IBAction)logoutTouched:(id)sender {

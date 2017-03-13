@@ -32,9 +32,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewWillAppear:(BOOL)animated {
-}
-
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -45,6 +42,15 @@
         vc.hidesBottomBarWhenPushed = YES;
     }
 }
+
+#pragma mark - TextField Delegate
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+#pragma mark - IBActions
 
 - (IBAction)hideKeyboard:(id)sender {
     [self.raffleNameTextField resignFirstResponder];

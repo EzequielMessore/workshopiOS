@@ -202,7 +202,10 @@
                                         </constraints>
                                         <color key="textColor" red="0.21176470589999999" green="0.27450980390000002" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Wxw-Gr-YLw" id="jfM-zg-pWp"/>
+                                        </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2g-Ni-qxZ">
                                         <rect key="frame" x="0.0" y="34" width="303" height="1"/>
@@ -234,7 +237,10 @@
                                         </constraints>
                                         <color key="textColor" red="0.21176470589999999" green="0.27450980390000002" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Wxw-Gr-YLw" id="8hf-cw-aPp"/>
+                                        </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QvS-4V-ZBL">
                                         <rect key="frame" x="0.0" y="34" width="303" height="1"/>
