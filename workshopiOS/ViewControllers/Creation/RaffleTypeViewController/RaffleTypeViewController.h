@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CreationRetweetViewController.h"
 
-@interface RaffleTypeViewController : UIViewController
+@interface RaffleTypeViewController : UIViewController <RetweetCreationDelegate>
 
 - (IBAction)followersRaffleTouched:(id)sender;
 - (IBAction)retweetRaffleTouched:(id)sender;

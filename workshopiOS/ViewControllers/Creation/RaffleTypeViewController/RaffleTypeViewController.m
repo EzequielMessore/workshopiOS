@@ -29,16 +29,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"createFollowersSegue"]) {
         CreationFollowersViewController *vc = [segue destinationViewController];
         vc.hidesBottomBarWhenPushed = YES;
+    } else if ([segue.identifier isEqualToString:@"createRetweetSegue"]) {
+        CreationRetweetViewController *vc = [segue destinationViewController];
+        vc.delegate = self;
     }
 }
-
 
 - (IBAction)followersRaffleTouched:(id)sender {
     [self performSegueWithIdentifier:@"createFollowersSegue" sender:nil];
@@ -46,6 +47,12 @@
 
 - (IBAction)retweetRaffleTouched:(id)sender {
     [self performSegueWithIdentifier:@"createRetweetSegue" sender:nil];
+}
+
+#pragma mark - Retweet Delegate
+
+-(void)triedToCreateRetweetRaffleWithMessage:(NSString *)message {
+    [self.navigationController presentViewController:[AppUtils setupAlertWithMessage:message] animated:YES completion:nil];
 }
 
 @end

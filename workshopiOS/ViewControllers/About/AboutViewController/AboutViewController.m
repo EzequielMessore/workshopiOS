@@ -25,7 +25,6 @@
     //Right Button - Add Button
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(logoutTouched:)];
     self.navigationItem.rightBarButtonItem = rightButton;
-    
 }
 
 - (void)didReceiveMemoryWarning {

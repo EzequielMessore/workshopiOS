@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "EmptyStateView.h"
 
+@protocol RetweetCreationDelegate <NSObject>
+
+-(void)triedToCreateRetweetRaffleWithMessage:(NSString *)message;
+
+@end
+
 @interface CreationRetweetViewController : UIViewController
+
+@property (weak, nonatomic) id<RetweetCreationDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet EmptyStateView *emptyStateView;
 

@@ -27,6 +27,11 @@
 
 }
 
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.delegate triedToCreateRetweetRaffleWithMessage:@"Sorry, this feature is not available right now :("];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
